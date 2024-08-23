@@ -53,63 +53,11 @@ authoryear]{elsarticle} %review=doublespace preprint=single 5p=2 column
 \setcounter{secnumdepth}{5}
 % Pandoc toggle for numbering sections (defaults to be off)
 
-% Pandoc syntax highlighting
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 
 % tightlist command for lists without linebreak
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-% From pandoc table feature
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 
 
 
@@ -182,115 +130,335 @@ cesta 83d},city={Zagreb},postcode={10000},country={Croatia},}
   
  \end{frontmatter}
 
-Please make sure that your manuscript follows the guidelines in the
-Guide for Authors of the relevant journal. It is not necessary to
-typeset your manuscript in exactly the same way as an article, unless
-you are submitting to a camera-ready copy (CRC) journal.
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
-For detailed instructions regarding the elsevier article class, see
-\url{https://www.elsevier.com/authors/policies-and-guidelines/latex-instructions}
+The concentration of so-called hybrid forms of media content in the
+contemporary online environment is becoming increasingly intense
+(Balasubramanian, 1994; Macnamara, 2014; Taiminen, Luoma-aho \&
+Tolvanen, 2015). Among the most prominent forms are sponsored content
+(Tutaj \& Reijmersdal, 2012), content marketing (Pulizzi, 2014; Pulizzi
+\& Piper, 2023), brand journalism (Cole \& Greer, 2013), and native
+advertising (Verčič \& Tkalac Verčič, 2016). For most researchers, the
+latter term will serve as an umbrella term that attempts to simplify the
+classification of hybrid forms, as native advertising by definition
+implies a paid advertisement that resembles editorial content, aiming to
+attract the target audience with useful content while simultaneously
+promoting the brand, values, and products (Cole \& Greer, 2013; Howe \&
+Teufel, 2014; Wojdynski \& Evans, 2016). On the other hand, the research
+by Taiminen et al.~(2015) showed that most public relations and
+marketing professionals preferred to use the term ``content marketing''
+when discussing commercial hybrid forms of online content. In addition
+to the obvious terminological confusion, three other problematic areas
+of native advertising need to be highlighted:
 
-\hypertarget{bibliography-styles}{%
-\section{Bibliography styles}\label{bibliography-styles}}
+Application area: Is native advertising a public relations technique, a
+marketing tool, or a tactic that does not differ from traditional
+advertising in any way?
 
-Here are two sample references: \citeauthor{Feynman1963118}
-\citetext{\citeyear{Feynman1963118}; \citealp{Dirac1953888}}.
+Authorship of native ads: Who creatively signs them and who is
+responsible for their content? Legal and ethical framework: How is
+native advertising legally defined, and what is the practice of media
+houses in labeling such advertisements (Trbušić, Maleš \& Šikić, 2024).
 
-By default, natbib will be used with the \texttt{authoryear} style, set
-in \texttt{classoption} variable in YAML and with
-\texttt{elsearticle-harv.bst} which is among provided style by
-\texttt{elsarticle} documentclass. Other available style are
-\texttt{elsarticle-num.bst} and \texttt{elsarticle-num-names.bst} ---
-the first one can be used for the numbered scheme, second one for
-numbered with new options of natbib.sty.
+The theoretical basis of this paper is the thesis that native
+advertising is ``an extension of content marketing and provides
+marketers with a platform to place content in front of a wider audience
+they wouldn't ordinarily reach'' (Crook, 2022). Although there are
+authors who highlight certain criteria by which content marketing
+differs from native advertising, which will be described in more detail
+later in the paper, the ultimate goal is common: to drive profitable
+customer action. The profitability of such market communication for
+organizations and brands is demonstrated by recent metrics. Figures show
+that 47\% of marketing professionals globally believe in the
+effectiveness of this type of advertising (Kloot, 2022), and that in
+2023, spending on native advertising in the United States increased by
+12\% compared to the previous year (eMarketer, 2023). Thus, with more
+than 97 billion US dollars invested, native advertising holds the
+largest share (59.7\%) of the total expenditure for all types of
+advertising (eMarketer, 2023).
 
-You can sets extra options with \texttt{natbiboptions} variable in YAML
-header. Example
+\hypertarget{native-advertising-and-content-marketing-two-faces-of-the-same-coin}{%
+\section{Native advertising and content marketing -- two faces of the
+same
+coin?}\label{native-advertising-and-content-marketing-two-faces-of-the-same-coin}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{natbiboptions}\KeywordTok{:}\AttributeTok{ longnamesfirst,angle,semicolon}
-\end{Highlighting}
-\end{Shaded}
+Charmaine Du Plessis (2015a) defines content marketing as sharing brand
+content via owned media to gain earned media, which clearly implies that
+it is not a type of media content that is paid for, as (native)
+advertising certainly is. In this context, Du Plessis employs the
+classic PESO model of media content in public relations (Dietrich,
+2014), which distinguishes paid media (advertising or other sponsored
+content); earned media (publicity generated from media pitches or news
+releases); shared media (content shared and re-shared on social media);
+and owned media (such as company's website, newsletter, or email
+communications). The order in the PESO model has long reflected the
+priorities of organizations in media strategy planning. However, recent
+research (Macnamara, Lwin, Adi \& Zerfass, 2016) indicates a shift in
+the order in practice, with the dominance shifting to the SOEP model
+instead of the classic PESO model. The reasons for this are manifold,
+but the most indicative is that owned and earned media content are
+trusted more than paid media, while shared media (i.e.,
+``recommendations from people I know'' and ``consumer opinions posted
+online'') are the most trusted information sources of all (Nielsen,
+2015).
 
-There are various more specific bibliography styles available at
-\url{https://support.stmdocs.in/wiki/index.php?title=Model-wise_bibliographic_style_files}.
-To use one of these, add it in the header using, for example,
-\texttt{biblio-style:\ model1-num-names}.
+Like Du Plessis, other authors (Handley \& Chapman, 2011; Halvorson \&
+Rach, 2012) also differentiate content marketing from other forms of
+hybrid content exclusively based on the distribution channel (owned
+media). However, there are authors who leave much more room for
+interpretation, not strictly confining it to owned media that later
+generates earned media (publicity). Their definitions are more focused
+on the strategy, intent, and ultimate goal of content marketing, rather
+than on the tactics and type of media content within the PESO framework.
+For instance, they highlight that content marketing is ``a strategic
+marketing approach focused on creating and distributing valuable,
+relevant, and consistent content'' (Pulizzi \& Piper, 2023; CMI, 2024),
+which is disseminated on various platforms such as newspapers,
+magazines, TV, or radio channels (Holliman \& Rowley, 2014).
 
-\hypertarget{using-csl}{%
-\subsection{Using CSL}\label{using-csl}}
+The distribution of valuable, relevant, and consistent content is also
+at the core of native advertising (Campbell \& Marks, 2015; Kim, 2017),
+which is especially evident in so-called branded or native content.
+According to the Interactive Advertising Bureau (IAB), there are three
+fundamental forms of native advertising: In-Feed/In-Content native
+advertising, Content Recommendation Ads, and Branded/native content. The
+latter refers to ``paid content by a brand that is published in the same
+format as full-fledged editorial content on the publisher's website,
+usually in collaboration with the publisher's own teams'' (IAB, 2019,
+p.~14). This form of native advertising will be the focus of the
+research part of this paper for two main reasons: it conceptually
+correlates with the forms and tactics of content marketing, and it is
+the only form among the mentioned types of native advertising that can
+be approached analytically.
 
-If \texttt{citation\_package} is set to \texttt{default} in
-\texttt{elsevier\_article()}, then pandoc is used for citations instead
-of \texttt{natbib}. In this case, the \texttt{csl} option is used to
-format the references. Alternative \texttt{csl} files are available from
-\url{https://www.zotero.org/styles?q=elsevier}. These can be downloaded
-and stored locally, or the url can be used as in the example header.
+Types and tactics of content marketing typically include blogs,
+infographics, video content, photos, webinars, podcasts and social media
+(Halligan \& Shah, 2010; Handley \& Chapman, 2011; Bloomstein, 2012;
+Wuebben, 2012; Vibrant Publishers, 2020), but also paid ads (Baker,
+2024), such as sponsored advertising options on social media, affiliate
+marketing, remarketing, native ads etc. (Jefferson \& Tanton, 2015). It
+is yet another proof of the inconsistent interpretation of content
+marketing as something that is disseminated exclusively via owned media.
+It is more appropriate to consider content marketing as a set of tactics
+that, among other things, can drive traffic back to the website of some
+company or product (owned media). It is also noticeable that some
+authors of definitions avoid identifying content marketing with product
+advertising which aims at the purchase of a product or service (Patrutiu
+Baltes, 2015), seeking to further differentiate it from other related
+marketing tactics. The fact is that content marketing is part of an
+inbound marketing strategy, which, unlike the outbound strategy, is
+focused on ``attracting valuable consumers (potential, existing, or
+aspirational) who choose to interact with a particular company that
+provides them with something useful'' (Opreana \& Vinerean, 2015,
+p.~29). However, it is misguided to claim that the ultimate goal of any
+marketing communication, including content marketing, is not sales or
+gaining profit (Rowley, 2008; Pulizzi \& Piper, 2023). Furthermore, both
+academics and practitioners agree that content marketing relies on a
+consumer-centric strategy (Ho, Pang \& Choy, 2020). In conclusion,
+regardless of the type of marketing communication, whether it is content
+marketing, native advertising, or brand journalism - although one can
+discuss nuanced tactics and approaches to attract consumers into the
+marketing funnel and later motivate them for retention and advocacy
+phases - profitable customer action remains the intrinsic motive of
+every organization or brand.
 
-\hypertarget{equations}{%
-\section{Equations}\label{equations}}
+Previous research does not encompass the analysis of native advertising
+as part of content marketing; rather, these concepts have been the focus
+of separate studies. Thus, insights in the context of native advertising
+relate to the analysis of readers' cognitive perception of native ads
+and their persuasive elements (Wojdynski \& Evans, 2016), analysis of
+communication strategies in native ads (Wang \& Li, 2017), perception of
+the organization or the sponsor of native ads and its socially
+responsible activities (Jung \& Heo, 2018; Krouwer, Poels \& Paulussen,
+2019; Beckert, Koch, Viererbl, Denner, \& Peter, 2020; Wu \& Overton,
+2021), perception of the credibility of online portals that publish
+native ads (Howe \& Teufel, 2014), and analysis of the basic features of
+native ads based on the most-read selected Croatian online portals
+(Trbušić et al., 2024). Research in the field of content marketing
+primarily reflects valuable theoretical contributions, such as
+conceptual definitions, classification of types and forms of content
+marketing, identification of strategies and tactics of content marketing
+in the digital environment (Koiso-Kanttila, 2004; Rowley, 2008; Handley
+\& Chapman, 2011; Bloomstein, 2012; Wuebben, 2012; Pulizzi, 2014;
+Jefferson \& Tanton, 2015; Vinerean, 2017; Pulizzi \& Piper, 2023), and
+the definition of six fundamental elements of content marketing which
+should be considered by marketers (Du Plessis, 2015a; Du Plessis,
+2015b). Empirically, content marketing has been analyzed as part of B2B
+strategies on digital channels (Holliman \& Rowley, 2014) or in the
+context of content creation practices in successful companies (Du
+Plessis, 2015c; Ho et al., 2020). Additionally, studies have addressed
+the causal linkage between content marketing and online consumer
+behavior (Du Plessis, 2022) and content marketing as part of business
+strategy in the luxury industry (Rios, 2016).
 
-Here is an equation: \[ 
-  f_{X}(x) = \left(\frac{\alpha}{\beta}\right)
-  \left(\frac{x}{\beta}\right)^{\alpha-1}
-  e^{-\left(\frac{x}{\beta}\right)^{\alpha}}; 
-  \alpha,\beta,x > 0 .
-\]
+\hypertarget{methodology-and-analytical-design}{%
+\section{Methodology and analytical
+design}\label{methodology-and-analytical-design}}
 
-Here is another: \begin{align}
-  a^2+b^2=c^2.
-\end{align}
+Cilj istraživanja je utvrditi osnovne karakteristike sadržajnih
+elemenata nativnih oglasa (kao jedne od strategija sadržajnog
+marketinga) na promatranim najčitanijim hrvatskim internetskim
+portalima. Specifični ciljevi istraživanja usmjereni su na promatranje
+dviju širih cjelina. Riječ je o značajkama naslova (npr. vrste rečenica
+u naslovima, zastupljenost i vrste clikbait naslova, navođenje naziva
+brenda) te o analizi elemenata unutar samog sadržaja nativnih oglasa
+(npr. navođenje izvora tj. upotrebljavanje izjava sugovornika,
+korištenje opreme i vizualnog identiteta). Spomenute kategorije nisu
+izabrane proizvoljno, već su definirane sukladno vrstama i tipologiji
+sadržajnog marketinga (see p.~5). Osim toga, cilj je utvrditi postoji li
+značajna korelacija između karakteristikâ naslova i sadržaja nativnih
+oglasa s dosegom publike. Jednako tako, pozornost je u radu usmjerena i
+na specifičnosti koje se u ovom vidu oglašavanja primjećuju kod
+različitih industrija, tj. različitih praksi kojima pribjegavaju
+naručitelji nativnih oglasa.
 
-Inline equations: \(\sum_{i = 2}^\infty\{\alpha_i^\beta\}\)
+Uzorak za istraživanje čine nativni oglasi objavljivani u šestomjesečnom
+razdoblju (prosinac 2021. -- svibanj 2022.) na šest najčitanijih
+hrvatskih internetskih portala (index.hr, jutarnji.hr, vecernji.hr,
+24sata.hr, telegram.hr, slobodnadalmacija.hr), koji su prema kriteriju
+posjećenosti izdvojeni kao najutjecajniji online mediji u hrvatskom
+digitalnom medijskom prostoru (Peruško, 2023), Nakon provedene strojne
+predanalize koja je uključivala sve objave na hrvatskim internetskim
+portalima kroz promatrano razdoblje, odnosno nešto više od 1,5 milijuna
+objava na 5104 internetske stranice, izdvojen je reprezentativan uzorak
+temeljen kriterija posjećenosti, tj. najveći hrvatski internetski
+portali na kojima je provedena strojna pretraga po ključnim riječima i
+frazama u sadržaju ili naslovu. Ključne riječi prema kojima je tako
+izdvojen nativni sadržaj odnosile su se na složenice kao što su:
+„plaćeni sadržaj``, „sponzorirani sadržaj``, „native``, „sadržaj
+donosi``, „sadržaj nastao``, „prilog je napravljen``, „powered by``,
+„tnative``, „24contenthaus``, s obzirom na to kako nativni sadržaj treba
+biti istaknut kao takav u mediju. Nakon izdvajanja svih članaka kroz
+šestomjesečno razdoblje koji odgovaraju ovim ključnim riječima, njih
+ukupno 811, ljudskom analizom su odbačeni oni koji ne zadovoljavaju
+karakteristike nativnih članaka, što se primarno odnosilo na
+sponzorirane ili PR objave i druge sadržaje koji se ne odnose na nativne
+oglase, a kao konačan uzorak za provedbu istraživanja su identificirana
+i ukupno izdvojena 543 nativna oglasa na šest internetskih portala koji
+se ističu po svojoj utjecajnosti i čitanosti u Republici Hrvatskoj.
+Jednako tako, prethodno određivanju uzorka za istraživanje, utvrđeno je
+kako svi internetski portali čiji su članci predmetom analize sadržaja,
+uopće nude uslugu nativnog oglašavanja, kroz provjeru njihovih javno
+dostupnih cjenika marketinških, oglašivačkih i usluga odnosa s javnošću.
+Od ukupnog uzorka od 543 nativna oglasa, 177 objava ili 32,6 posto
+objava odnosi se na internetski portal jutarnji.hr, 103 objave ili 18.97
+\% na vecernji.hr, dok se 99 objava ili 18,23 \% odnosi na telegram.hr.
+Na internetski portal 24sata.hr odnosi se 88 analiziranih članaka ili
+16,21 \%, na index.hr 62 ili 11,42 \%, a na slobodnadalmacija.hr 14
+nativnih članaka ili 2,58 posto.
 
-\hypertarget{figures-and-tables}{%
-\section{Figures and tables}\label{figures-and-tables}}
+Istraživanje na uzorku od 543 nativna oglasa objavljena od 1. prosinca
+2021. do 30. svibnja 2022. godine na izdvojenih šest hrvatskih
+internetskih portala koji zadovoljavaju kriterij posjećenosti, provedeno
+je metodom analize sadržaja, pri čemu je primijenjena analitička matrica
+koja je sadržavala pet općih kategorija (opći identifikacijski elementi,
+sadržajno isticanje, karakteristike naslova, karakteristike sadržaja,
+angažman publike), unutar kojih je izdvojeno 19 varijabli po kojima je
+promatran svaki od 543 oglasa. Pri analizi su autori nazavisno čitali i
+analizirali sve identificirane oglase i potom usporedili rezultate uz
+potpuno poklapanje u svim varijablama među autorima.
 
-Figure \ref{fig2} is generated using an R chunk.
+Za potrebe ovoga istraživanja su promatrane dvije opće kategorije,
+sukladno vrstama i tipologiji sadržajnog marketinga: karakteristike
+naslova i karakteristike sadržaja nativnih oglasa. Varijable su se
+odnosile na kategoriziranje vrsta naslova, na povezanost naslova s
+brendom oglašivača te na određivanje tipa clickbait naslova, dok je
+analiza samog sadržaja nativnih članaka bila usmjerena na vrstu vizualne
+opreme članka (foto, video, infografika, grafika, kombinacije navedenih)
+i njenu povezanost s vizualnim identitetom oglašivača, odnosno
+zastupljenost različitih vrsta izvora/izjava (izvor iz
+organizacije/tvrtke, brend ambasador, influencer - slavna/poznata osoba,
+izravni korisnik proizvoda ili usluge, više izvora) u nativnim oglasima.
 
-\begin{figure}
+Cilj istraživanja je i utvrditi postoji li značajna korelacija između
+vrsta naslova i dosegom publike, stoga su podaci o karakteristikama
+naslova dovedeni u vezu s podacima o dosegu svakog pojedinog oglasa, a
+istraživanje je usto i utvrdilo jesu li određene vrste naslova nativnih
+oglasa zastupljenije, odnosno karakterističnije za različite industrije.
+Na jednak su način uspoređene i promatrane vrste izjava koje se nalaze u
+analiziranim nativnim oglasima -- s obzirom na vrstu industrije kojoj
+pripada oglašivač te s obzirom na doseg te objave.
 
-{\centering \includegraphics[width=0.5\linewidth]{paper_files/figure-latex/fig2-1} 
+\hypertarget{results-and-discussion}{%
+\section{Results and Discussion}\label{results-and-discussion}}
 
-}
+Od ukupnog broja od 543 analizirana nativna oglasa koja su objavljena u
+šestomjesečnom razdoblju (prosinac 2021. -- svibanj 2022.) na šest
+hrvatskih internetskih portala koji zadovoljavaju kriterij posjećenosti
+i relevantnosti (jutarnji.hr, index.hr, vecernji.hr, 24sata.hr,
+telegram.hr, slobodnadalmacija.hr), kod njih gotovo četiri petine (79,01
+\%) utvrđena je zastupljenost clickbait naslova. Pri određivanju
+obilježja clickbait poslužili smo se tipologijom koju su definirali
+Kanižaj\ldots{} Istraživanje je pokazalo kako su najzastupljeniji oni
+clickbait naslovi koje karakterizira neizvjesnost (44,38 \%). Više
+kombinacija stilova u naslovima je zamijećeno kod 13,81 \% oglasa, dok
+je 20,99 \% naslova bilo bez ijedne clickbait karakteristike. Naslovi u
+kojima prevladava stil koji podrazumijeva korištenje brojkama pojavljuje
+se u 9,39 \% slučajeva, a 5,89 \% naslova karakterizira naglašavanje
+emocija. Kod 4,97 \% naslova primijećeno je korištenje nedefiniranim
+zamjenicama, dok je stil obrnutog narativa registriran kod 0,55 \%
+oglasa.
 
-\caption{\label{fig2}A meaningless scatterplot.}\label{fig:fig2}
-\end{figure}
+Tablica 1. Zastupljenost obilježja clickbait naslova kod analiziranih
+nativnih oglasa (n=543)
 
-\hypertarget{tables-coming-from-r}{%
-\section{Tables coming from R}\label{tables-coming-from-r}}
+Obilježja clickbait naslova kod nativnog oglasa Broj objava \%
+Nedefinirane zamjenice 27 4,97 Neizvjesnost 241 44,38 Stil obrnutog
+narativa 3 0,55 Naglašavanje emocija 32 5,89 Korištenje brojkama 51 9,39
+Više kombinacija 75 13,81 Nije clickbait naslov 114 20,99
 
-Tables can also be generated using R chunks, as shown in Table
-\ref{tab1} for example.
+Kod velike većine promatranih nativnih oglasa (94,48 \%) nije
+zabilježeno navođenje naziva brenda oglašivača u njihovu naslovu, dok je
+kod 5,52 \% ili trideset članaka od njih 543, naziv brenda bio dijelom
+naslova. TU ĆEMO DODATI TU RAZLIKU IZMEĐU SPONZORIRANOG ČLANKA KOJI U
+PRAKSI NAVODI OGLAŠIVAČA U NASLOVU I NATIVEA KOJI TO NE PRAKTICIRA JER
+JE RIJEČ O SUPTILNIJOJ OGLAŠIVAČKOJ TAKTICI BLA BLA
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}\FunctionTok{head}\NormalTok{(mtcars)[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{], }
-    \AttributeTok{caption =} \StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{label\{tab1\}Caption centered above table"}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{verbatim}
+Većina naslova, njih 71,09 %, po vrsti je bilo izjavna rečenica, dok se petina naslova (20,26 posto) odnosi na upitne, a 8,95 posto na usklične rečenice. Na području karakteristika sadržaja promatranih nativnih oglasa, vrijedno je istaknuti da su baš svi analizirani oglasi imali vizualnu opremu, od čega se samostalno i u kombinacijama s drugim vrstama vizualnog sadržaja u prvome planu ističe fotografija. Kao što prikazuju podaci iz Tablice 2, u 73,67 % slučajeva, oglasi su bili opremljeni isključivo fotografskim sadržajem, dok se u 11,97 % slučajeva uz fotografiju nalazio i grafički sadržaj. Kod 11,05 % oglasa se uz fotografiju nalazio i video sadržaj, a u 2,39 % slučajeva se radilo o nativnim oglasima koji su sadržavali i foto i video i grafički sadržaj. 
+\end{verbatim}
 
-\begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab1}Caption centered above table}\tabularnewline
-\toprule\noalign{}
-& mpg & cyl & disp & hp \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-& mpg & cyl & disp & hp \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-Mazda RX4 & 21.0 & 6 & 160 & 110 \\
-Mazda RX4 Wag & 21.0 & 6 & 160 & 110 \\
-Datsun 710 & 22.8 & 4 & 108 & 93 \\
-Hornet 4 Drive & 21.4 & 6 & 258 & 110 \\
-Hornet Sportabout & 18.7 & 8 & 360 & 175 \\
-Valiant & 18.1 & 6 & 225 & 105 \\
-\end{longtable}
+Tablica 2. Vrsta vizualne opreme analiziranih nativnih oglasa (n=543)
+
+Vrsta vizualne opreme kod nativnih oglasa Broj objava \% Foto-sadržaj
+400 73,67 Video-sadržaj 0 0 Grafika ili infografika 3 0,55 Foto i video
+sadržaj 60 11,05 Foto i grafički sadržaj 65 11,97 Video i grafički
+sadržaj 2 0,37 Foto, video i grafički sadržaj 13 2,39 Članak nema
+vizualnu opremu 0 0
+
+\begin{verbatim}
+Logotip oglašivača, odnosno elementi vizualnog identiteta oglašivača, bili su prikazani u sklopu vizualne opreme analiziranih nativnih oglasa u 34,44 % slučajeva, dok kod 356 od 543 analizirana članka, to nije bio slučaj, odnosno, oni nisu sadržavali vizualnu poveznicu s oglašivačem. 
+Od karakteristika sadržaja nativnih oglasa u ovome istraživanju, promatrane su i vrste izvora, odnosno izjava u samim člancima, što je prikazano u Tablici 3. Tako je omjer oglasa koji koriste izvore u odnosu na one koji ih ne koriste približno sličan, dok su među oglasima koji sadrže izvor najzastupljeniji oni kojima je izvor osoba iz organizacije, tj. naručitelja oglasa (19,71 %). Drugi najistaknutiji s 10,31 % zastupljenosti su oni izvori koji nisu izravno povezani s proizvodom ili uslugom, dok je u 7,55 % slučajeva prisutno više izvora, a u 6,81 % oglasa je riječ o svjedočanstvu ili izjavi osobe koja se predstavlja kao izravni korisnik proizvoda ili usluge. Kao izvori u nativnim oglasima koriste se i poznate osobe pa su tako izjave brend ambasadora korištene u 4,79 % slučajeva, a izjave influencera ili slavnih osoba su bile prisutne u 3,5 % promatranih oglasa. 
+\end{verbatim}
+
+Tablica 3. Zastupljenost različitih vrsta izvora u izjavama kod
+analiziranih nativnih oglasa (n=543)
+
+Vrste izvora / izjava kod nativnih oglasa Broj objava \% Nema izvora /
+izjave 257 47,33 Izvor iz organizacije / tvrtke 107 19,71 Brend
+ambasador 26 4,79 Influencer, slavna / poznata osoba 19 3,5 Izravni
+korisnik proizvoda ili usluge 37 6,81 Više izvora 41 7,55 Izvor
+nepovezan s proizvodom ili uslugom 56 10,31
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+Zaključak istraživanja može se sažeti kroz nekoliko ključnih točaka.
+Analiza 543 nativna oglasa objavljena na šest hrvatskih internetskih
+portala pokazala je značajnu prisutnost clickbait naslova, gdje je
+gotovo 80 \% naslova imalo barem jednu clickbait karakteristiku, pri
+čemu se najčešće koristio stil neizvjesnosti. Iako je u manjem dijelu
+naslova (5,52 \%) zabilježeno navođenje brenda, većina ih je bila
+neutralna po pitanju izravnog reklamiranja. Naslovi su pretežito izjavne
+rečenice, dok su vizualni elementi, osobito fotografije, bili prisutni u
+svim oglasima, pri čemu je logo oglašivača bio uključen u 34,44 \%
+slučajeva. Na području izvora izjava, gotovo polovica članaka nije
+koristila izjave, dok su u ostalim člancima najčešće izvori bile osobe
+iz organizacije, s relativno malom prisutnošću influencera i slavnih
+osoba. Ovi nalazi ukazuju na dominaciju clickbait naslova i značajnu
+ulogu vizualne opreme u nativnom oglašavanju, dok je izravno povezivanje
+s brendom i korištenje autoritativnih izvora rjeđe zastupljeno.
 
 \renewcommand\refname{References}
 \bibliography{refs.bib}
