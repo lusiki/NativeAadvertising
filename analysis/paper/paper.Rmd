@@ -51,6 +51,8 @@ output:
     citation_package: natbib
 ---
 
+
+
 # Introduction 
 
 The concentration of so-called hybrid forms of media content in the contemporary online environment is becoming increasingly intense (Balasubramanian, 1994; Macnamara, 2014; Taiminen, Luoma-aho & Tolvanen, 2015). Among the most prominent forms are sponsored content (Tutaj & Reijmersdal, 2012), content marketing (Pulizzi, 2014; Pulizzi & Piper, 2023), brand journalism (Cole & Greer, 2013), and native advertising (Verčič & Tkalac Verčič, 2016). For most researchers, the latter term will serve as an umbrella term that attempts to simplify the classification of hybrid forms, as native advertising by definition implies a paid advertisement that resembles editorial content, aiming to attract the target audience with useful content while simultaneously promoting the brand, values, and products (Cole & Greer, 2013; Howe & Teufel, 2014; Wojdynski & Evans, 2016). On the other hand, the research by Taiminen et al. (2015) showed that most public relations and marketing professionals preferred to use the term “content marketing” when discussing commercial hybrid forms of online content. In addition to the obvious terminological confusion, three other problematic areas of native advertising need to be highlighted:
@@ -61,6 +63,26 @@ Authorship of native ads: Who creatively signs them and who is responsible for t
 Legal and ethical framework: How is native advertising legally defined, and what is the practice of media houses in labeling such advertisements (Trbušić, Maleš & Šikić, 2024).
 
 The theoretical basis of this paper is the thesis that native advertising is “an extension of content marketing and provides marketers with a platform to place content in front of a wider audience they wouldn't ordinarily reach” (Crook, 2022). Although there are authors who highlight certain criteria by which content marketing differs from native advertising, which will be described in more detail later in the paper, the ultimate goal is common: to drive profitable customer action. The profitability of such market communication for organizations and brands is demonstrated by recent metrics. Figures show that 47% of marketing professionals globally believe in the effectiveness of this type of advertising (Kloot, 2022), and that in 2023, spending on native advertising in the United States increased by 12% compared to the previous year (eMarketer, 2023). Thus, with more than 97 billion US dollars invested, native advertising holds the largest share (59.7%) of the total expenditure for all types of advertising (eMarketer, 2023).
+
+
+
+```{r }
+
+
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(ggthemes)
+library(tidyverse)
+library(readxl)
+library(xlsx)
+library(here)
+
+
+
+```
+
+
 
 # Native advertising and content marketing – two faces of the same coin?
 Charmaine Du Plessis (2015a) defines content marketing as sharing brand content via owned media to gain earned media, which clearly implies that it is not a type of media content that is paid for, as (native) advertising certainly is. In this context, Du Plessis employs the classic PESO model of media content in public relations (Dietrich, 2014), which distinguishes paid media (advertising or other sponsored content); earned media (publicity generated from media pitches or news releases); shared media (content shared and re-shared on social media); and owned media (such as company’s website, newsletter, or email communications). The order in the PESO model has long reflected the priorities of organizations in media strategy planning. However, recent research (Macnamara, Lwin, Adi & Zerfass, 2016) indicates a shift in the order in practice, with the dominance shifting to the SOEP model instead of the classic PESO model. The reasons for this are manifold, but the most indicative is that owned and earned media content are trusted more than paid media, while shared media (i.e., “recommendations from people I know” and “consumer opinions posted online”) are the most trusted information sources of all (Nielsen, 2015).
@@ -77,6 +99,46 @@ Previous research does not encompass the analysis of native advertising as part 
 # Methodology and analytical design
 
 Cilj istraživanja je utvrditi osnovne karakteristike sadržajnih elemenata nativnih oglasa (kao jedne od strategija sadržajnog marketinga) na promatranim najčitanijim hrvatskim internetskim portalima. Specifični ciljevi istraživanja usmjereni su na promatranje dviju širih cjelina. Riječ je o značajkama naslova (npr. vrste rečenica u naslovima, zastupljenost i vrste clikbait naslova, navođenje naziva brenda) te o analizi elemenata unutar samog sadržaja nativnih oglasa (npr. navođenje izvora tj. upotrebljavanje izjava sugovornika, korištenje opreme i vizualnog identiteta). Spomenute kategorije nisu izabrane proizvoljno, već su definirane sukladno vrstama i tipologiji sadržajnog marketinga (see p. 5). Osim toga, cilj je utvrditi postoji li značajna korelacija između karakteristikâ naslova i sadržaja nativnih oglasa s dosegom publike. Jednako tako, pozornost je u radu usmjerena i na specifičnosti koje se u ovom vidu oglašavanja primjećuju kod različitih industrija, tj. različitih praksi kojima pribjegavaju naručitelji nativnih oglasa. 
+
+
+
+
+```{r}
+```{r data}
+
+
+original <- read.xlsx(here("analysis", "data", "raw_data", "native_articles.xlsx"), sheetIndex = 1) %>% mutate(V1 = as.numeric(V1))
+variables <- read.xlsx(here("analysis", "data", "raw_data", "native_research.xlsx"), sheetIndex = 1)
+
+dta <- merge(
+  original %>% filter(V1 %in% variables$V1),
+  variables %>% select(-c(23, 24, 25)),
+  by = "V1",
+  all.x = TRUE
+)
+
+# Convert the 'DATE' column to Date format
+dta$DATE <- as.Date(dta$DATE)
+
+
+
+
+
+
+
+
+
+stemmed <- readRDS("C:/Users/Lukas/Dropbox/Mediatoolkit/native_token_stemm.rds")
+stemmed <- readRDS("C:/Users/lukas/Dropbox/Članci/Native rad/native_token_stemm.rds")
+
+stemmed <- stemmed %>%
+  rename("wordp" = "word") %>%
+  rename("word" = "transformed_column")
+
+
+
+```
+
 
 Uzorak za istraživanje čine nativni oglasi objavljivani u šestomjesečnom razdoblju (prosinac 2021. – svibanj 2022.) na šest najčitanijih hrvatskih internetskih portala (index.hr, jutarnji.hr, vecernji.hr, 24sata.hr, telegram.hr, slobodnadalmacija.hr), koji su prema kriteriju posjećenosti izdvojeni kao najutjecajniji online mediji u hrvatskom digitalnom medijskom prostoru (Peruško, 2023), Nakon provedene strojne predanalize koja je uključivala sve objave na hrvatskim internetskim portalima kroz promatrano razdoblje, odnosno nešto više od 1,5 milijuna objava na 5104 internetske stranice, izdvojen je reprezentativan uzorak temeljen kriterija posjećenosti, tj. najveći hrvatski internetski portali na kojima je provedena strojna pretraga po ključnim riječima i frazama u sadržaju ili naslovu. Ključne riječi prema kojima je tako izdvojen nativni sadržaj odnosile su se na složenice kao što su: „plaćeni sadržaj“, „sponzorirani sadržaj“, „native“, „sadržaj donosi“, „sadržaj nastao“, „prilog je napravljen“, „powered by“, „tnative“, „24contenthaus“, s obzirom na to kako nativni sadržaj treba biti istaknut kao takav u mediju. Nakon izdvajanja svih članaka kroz šestomjesečno razdoblje koji odgovaraju ovim ključnim riječima, njih ukupno 811, ljudskom analizom su odbačeni oni koji ne zadovoljavaju karakteristike nativnih članaka, što se primarno odnosilo na sponzorirane ili PR objave i druge sadržaje koji se ne odnose na nativne oglase, a kao konačan uzorak za provedbu istraživanja su identificirana i ukupno izdvojena 543 nativna oglasa na šest internetskih portala koji se ističu po svojoj utjecajnosti i čitanosti u Republici Hrvatskoj. Jednako tako, prethodno određivanju uzorka za istraživanje, utvrđeno je kako svi internetski portali čiji su članci predmetom analize sadržaja, uopće nude uslugu nativnog oglašavanja, kroz provjeru njihovih javno dostupnih cjenika marketinških, oglašivačkih i usluga odnosa s javnošću. 
 Od ukupnog uzorka od 543 nativna oglasa, 177 objava ili 32,6 posto objava odnosi se na internetski portal jutarnji.hr, 103 objave ili 18.97 % na vecernji.hr, dok se 99 objava ili 18,23 % odnosi na telegram.hr. Na internetski portal 24sata.hr odnosi se 88 analiziranih članaka ili 16,21 %, na index.hr 62 ili 11,42 %, a na slobodnadalmacija.hr 14 nativnih članaka ili 2,58 posto.
