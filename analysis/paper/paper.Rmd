@@ -292,6 +292,121 @@ hist(filtered_dta$REACH,
 ```
 
 
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+# Create the clickbait DataFrame
+clickbait <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7),
+  text = c("Nedefinirane zamjenice", "Neizvjesnost", "Stil obrnutog narativa",
+           "Naglašavanje emocija", "Korištenje brojkama", "Više kombinacija",
+           "Nije clickbait naslov")
+)
+
+# Assuming 'dta' is your data frame and it contains 'REACH' and 'CLICKBAIT' columns
+# Group by CLICKBAIT and summarize REACH statistics
+summary_stats <- dta %>%
+  group_by(CLICKBAIT) %>%
+  summarise(
+    count = n(),
+    mean_reach = mean(REACH, na.rm = TRUE),
+    median_reach = median(REACH, na.rm = TRUE),
+    min_reach = min(REACH, na.rm = TRUE),
+    max_reach = max(REACH, na.rm = TRUE),
+    total_reach = sum(REACH, na.rm = TRUE)
+  )
+
+# Connect with clickbait names
+result <- summary_stats %>%
+  left_join(clickbait, by = c("CLICKBAIT" = "number"))
+
+# Display the result
+print(result)
+
+```
+
+
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+# Create the 'izvori' DataFrame
+izvori <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7),
+  text = c(
+    "Nema izvora / izjave",
+    "Izvor iz organizacije / tvrtke",
+    "Brend ambasador",
+    "Influencer, celebrity, slavna / poznata osoba",
+    "Korisnik proizvoda ili usluge (poduzetnik, Marica iz Benkovca)",
+    "Više izvora",
+    "Izvor nepovezan s proizvodom ili uslugom koja se promovira"
+  )
+)
+
+
+# Group by CLICKBAIT and summarize REACH statistics
+summary_stats <- dta %>%
+  group_by(`IZVORI...IZJAVE`) %>%
+  summarise(
+    count = n(),
+    mean_reach = mean(REACH, na.rm = TRUE),
+    median_reach = median(REACH, na.rm = TRUE),
+    min_reach = min(REACH, na.rm = TRUE),
+    max_reach = max(REACH, na.rm = TRUE),
+    total_reach = sum(REACH, na.rm = TRUE)
+  )
+
+# Connect with clickbait names
+result <- summary_stats %>%
+  left_join(izvori, by = c(`IZVORI...IZJAVE` = "number"))
+
+# Display the result
+print(result)
+
+
+
+
+```
+
+```{r}
+
+
+
+# Summarize the data by both INDUSTRIJA and CLICKBAIT
+summary_data <- dta %>%
+  group_by(INDUSTRIJA, CLICKBAIT) %>%
+  summarise(N = n()) %>%
+  ungroup() %>%
+  mutate(percent = round(N / sum(N) * 100, 2))
+
+# Merge with industry names
+summary_with_industry <- summary_data %>%
+  left_join(industry_list, by = c("INDUSTRIJA" = "id"))
+
+# Merge with clickbait descriptions
+final_summary <- summary_with_industry %>%
+  left_join(clickbait, by = c("CLICKBAIT" = "number"))
+
+# View the final table
+print(final_summary)
+
+# Optionally, calculate correlations between industries and clickbait types
+# You could reshape the data to a wide format and then calculate correlations if needed
+
+# Example: Reshape data to wide format for correlation analysis
+wide_summary <- final_summary %>%
+  select(category, text, N) %>%
+  spread(key = text, value = N, fill = 0)
+
+# Calculate correlations
+correlations <- cor(wide_summary[-1], use = "pairwise.complete.obs")
+
+print(correlations)
+
+
+
+```
+
+
 
 
 
