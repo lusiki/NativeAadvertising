@@ -56,10 +56,11 @@ output:
 
 The concentration of so-called hybrid forms of media content in the contemporary online environment is becoming increasingly intense (Balasubramanian, 1994; Macnamara, 2014; Taiminen, Luoma-aho & Tolvanen, 2015). Among the most prominent forms are sponsored content (Tutaj & Reijmersdal, 2012), content marketing (Pulizzi, 2014; Pulizzi & Piper, 2023), brand journalism (Cole & Greer, 2013), and native advertising (Verčič & Tkalac Verčič, 2016). For most researchers, the latter term will serve as an umbrella term that attempts to simplify the classification of hybrid forms, as native advertising by definition implies a paid advertisement that resembles editorial content, aiming to attract the target audience with useful content while simultaneously promoting the brand, values, and products (Cole & Greer, 2013; Howe & Teufel, 2014; Wojdynski & Evans, 2016). On the other hand, the research by Taiminen et al. (2015) showed that most public relations and marketing professionals preferred to use the term “content marketing” when discussing commercial hybrid forms of online content. In addition to the obvious terminological confusion, three other problematic areas of native advertising need to be highlighted:
 
-Application area: Is native advertising a public relations technique, a marketing tool, or a tactic that does not differ from traditional advertising in any way?
+> Application area: Is native advertising a public relations technique, a marketing tool, or a tactic that does not differ from traditional advertising in any way?
 
-Authorship of native ads: Who creatively signs them and who is responsible for their content?
-Legal and ethical framework: How is native advertising legally defined, and what is the practice of media houses in labeling such advertisements (Trbušić, Maleš & Šikić, 2024).
+> Authorship of native ads: Who creatively signs them and who is responsible for their content?
+
+> Legal and ethical framework: How is native advertising legally defined, and what is the practice of media houses in labeling such advertisements (Trbušić, Maleš & Šikić, 2024).
 
 The theoretical basis of this paper is the thesis that native advertising is “an extension of content marketing and provides marketers with a platform to place content in front of a wider audience they wouldn't ordinarily reach” (Crook, 2022). Although there are authors who highlight certain criteria by which content marketing differs from native advertising, which will be described in more detail later in the paper, the ultimate goal is common: to drive profitable customer action. The profitability of such market communication for organizations and brands is demonstrated by recent metrics. Figures show that 47% of marketing professionals globally believe in the effectiveness of this type of advertising (Kloot, 2022), and that in 2023, spending on native advertising in the United States increased by 12% compared to the previous year (eMarketer, 2023). Thus, with more than 97 billion US dollars invested, native advertising holds the largest share (59.7%) of the total expenditure for all types of advertising (eMarketer, 2023).
 
@@ -101,7 +102,7 @@ Previous research does not encompass the analysis of native advertising as part 
 
 # Methodology and analytical design
 
-The goal of the research is to determine the basic characteristics of the content elements of native ads (as one of the strategies of content marketing) on ​​the observed most read Croatian internet portals. The specific objectives of the research are focused on the observation of two broader entities. It is about the features of the title (e.g. types of sentences in the titles, representation and types of clickbait titles, mention of the brand name) and the analysis of elements within the content of native ads (e.g. citing sources, i.e. use of interlocutor statements, use of equipment and visual identity). The mentioned categories were not chosen arbitrarily, but were defined according to the types and typology of content marketing (see p. 5). In addition, the goal is to determine whether there is a significant correlation between the characteristics of the title and content of native ads with audience reach. Equally, attention is also focused in the work on the specifics that are observed in this type of advertising in different industries, i.e. different practices resorted to by those ordering native ads.
+The goal of the research is to determine the basic characteristics of the content elements of native ads (as one of the strategies of content marketing) on the observed most read Croatian internet portals. The specific objectives of the research are focused on the observation of two broader entities. It is about the features of the title (e.g. types of sentences in the titles, representation and types of clickbait titles, mention of the brand name) and the analysis of elements within the content of native ads (e.g. citing sources, i.e. use of interlocutor statements, use of equipment and visual identity). The mentioned categories were not chosen arbitrarily, but were defined according to the types and typology of content marketing (see p. 5). In addition, the goal is to determine whether there is a significant correlation between the characteristics of the title and content of native ads with audience reach. Equally, attention is also focused in the work on the specifics that are observed in this type of advertising in different industries, i.e. different practices resorted to by those ordering native ads.
 
 <details>
 <summary>Click to expand the code chunk</summary>
@@ -142,6 +143,158 @@ stemmed <- stemmed %>%
 
 ```
 </details>
+
+<details>
+<summary>Click to expand the code chunk</summary>
+```{r}
+
+industry_list <- data.frame(
+  id = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
+  category = c(
+    "Financijska industrija",
+    "Građevinska industrija",
+    "Moda i ljepota",
+    "Politička institucija",
+    "Sportska industrija",
+    "Zdravstvena industrija",
+    "Obrazovanje i znanost",
+    "Tehnologija",
+    "Auto-moto industrija",
+    "ICT industrija",
+    "Kultura i umjetnost",
+    "Turizam, odmor, putovanja, ugostiteljstvo",
+    "Energetska industrija",
+    "Prehrambena industrija",
+    "Industrija bezalkoholnih pića",
+    "Alkoholna pića",
+    "Industrija nekretnina",
+    "Maloprodaja",
+    "Igre na sreću",
+    "Medijske kuće i marketinške, digitalne agencije",
+    "Namještaj, saloni namještaja, kućanske potrepštine, kućanski uređaji, sredstva za čišćenje",
+    "Trgovački / shopping centri",
+    "Glazbena industrija",
+    "Filmska industrija",
+    "Brodogradnja",
+    "Pošta / distribucija pošiljki",
+    "Komunalne usluge"
+  )
+)
+
+
+IND <- dta %>%
+  group_by(INDUSTRIJA) %>%
+  summarise(N = n()) %>% 
+  mutate(percentIND = round(N / sum(N) * 100,2))
+
+  
+
+# Create a histogram of the 'price' variable in the 'diamonds' dataset
+# ggplot(data = IND, aes(x = percentIND)) +
+#   geom_histogram(binwidth = 1, fill = "blue", alpha = 0.7) +
+#   ggtitle("Industrija") +
+#   xlab("Industrija") +
+#   ylab("%") +
+#   scale_x_continuous(breaks = seq(from = min(dta$INDUSTRIJA), to =  max(dta$INDUSTRIJA), by = 1))
+
+
+
+
+# Joining the dataframes
+IND_joined <- IND %>%
+  left_join(industry_list, by = c("INDUSTRIJA" = "id")) %>%
+  arrange(desc(N))
+
+# Reordering the levels of 'category'
+IND_joined$category <- with(IND_joined, reorder(category, percentIND))
+
+#Plotting
+ggplot(data = IND_joined, aes(x = category, y = percentIND)) +
+  geom_bar(stat = "identity", fill = "black") +
+  labs(title = "Industrija", x = "Industrija", y = "%") +
+  theme_minimal() +
+  # theme(
+  #   axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+  #   panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+  #   panel.border = element_rect(fill = NA, color = "black")  # Add border
+  # ) +
+  coord_flip()  # Flip coordinates to have horizontal bars
+
+
+
+# IND %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+# 
+# 
+# industry_list %>%
+#   datatable(., options = list(scrollX = TRUE, scrollY = "500px"))
+
+
+
+IND_joined <- IND %>%
+  left_join(industry_list, by = c("INDUSTRIJA" = "id"))
+
+IND_final <- IND_joined %>%
+  select(category, N, percentIND) %>%
+  arrange(desc(N))
+
+
+IND_kable <- IND_final %>%
+  kable(format = "html", 
+        col.names = c("Industrija", "Broj objava", "%"),
+        caption = "Pregled po industrijama") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)
+
+IND_kable
+
+```
+
+</details>
+
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+IND_kable
+```
+
+
+
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+# Portals by reach
+reach <- dta %>%
+  group_by(FROM) %>%
+  summarise(reach = sum(REACH)) %>%
+  arrange(desc(reach))
+
+reach
+
+
+# make detailed descriptive statistics
+
+
+summary(dta$REACH)
+
+
+filtered_dta <- dta %>% filter(REACH >= 0 & REACH <= 30000)
+
+# Create the histogram
+hist(filtered_dta$REACH, 
+     xlab = "Reach", 
+     ylab = "Frequency", 
+     main = "Reach of Portals", 
+     col = "blue", 
+     breaks = 50)
+
+
+
+```
+
+
+
+
+
 
 The sample for the research consists of native ads published over a six-month period (December 2021 – May 2022) on the six most-read Croatian internet portals (index.hr, jutarnji.hr, vecernji.hr, 24sata.hr, telegram.hr, slobodnadalmacija.hr), which were selected as the most influential online media in the Croatian digital media space based on their traffic (Peruško, 2023). After conducting a machine-based pre-analysis that included all posts on Croatian internet portals during the observed period, totaling over 1.5 million posts across 5,104 websites, a representative sample was selected based on traffic criteria, i.e., the largest Croatian internet portals where a machine search was conducted using keywords and phrases in the content or title. The keywords used to identify native content included terms such as "paid content," "sponsored content," "native," "content provided by," "content created by," "this section was made by," "powered by," "tnative," "24contenthaus," considering that native content should be marked as such in the media. After isolating all articles over the six-month period that matched these keywords, a total of 811, those that did not meet the characteristics of native articles were excluded through human analysis, primarily referring to sponsored or PR releases and other content not related to native ads. The final sample for the research consisted of 543 native ads on six internet portals that stand out for their influence and readership in the Republic of Croatia. Additionally, before determining the research sample, it was confirmed that all internet portals whose articles were subject to content analysis offer native advertising services, through a review of their publicly available marketing, advertising, and public relations service price lists. 
 
