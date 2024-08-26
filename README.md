@@ -10,11 +10,8 @@ This repository contains the data and code for our paper:
 > Trbusic, D., Males, D., & Sikic, L. (YYYY). Native advertising as a
 > content marketing strategy. Name of journal/book. \<
 
-Our pre-print is online here:
-
-> Trbusic, D., Males, D., & Sikic, L. (YYYY). Native advertising as a
-> content marketing strategy. Name of journal/book, Accessed \[Date\].
-> Online at <https://doi.org/xxx/xxx>. \<
+Our pre-print is avaliable as online working paper
+[here](https://raw.githack.com/lusiki/NativeAadvertising/master/analysis/paper/paper.html).
 
 ### How to cite
 
