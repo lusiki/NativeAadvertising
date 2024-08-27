@@ -144,9 +144,19 @@ stemmed <- stemmed %>%
 ```
 </details>
 
+
+
+
+
+# REZULTATI ZA KOMBINIRANJE
+
+
+### summarizes and visualizes the distribution of articles by industry
+
+
 <details>
 <summary>Click to expand the code chunk</summary>
-```{r}
+```{r warning=FALSE, message=FALSE,error=FALSE}
 
 industry_list <- data.frame(
   id = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
@@ -258,7 +268,7 @@ IND_kable
 ```
 
 
-
+### summarizes the total reach per portal, provides descriptive statistics for reach, and creates a histogram of reach values (filtered to be between 0 and 30,000)
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
@@ -292,6 +302,9 @@ hist(filtered_dta$REACH,
 ```
 
 
+
+### summary statistics for reach (mean, median, min, max, total). It then connects these statistics with the corresponding clickbait descriptions
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 # Create the clickbait DataFrame
@@ -320,11 +333,18 @@ result <- summary_stats %>%
   left_join(clickbait, by = c("CLICKBAIT" = "number"))
 
 # Display the result
-print(result)
+result %>%
+  select(text, count, mean_reach, median_reach, min_reach, max_reach, total_reach) %>%
+  kable(format = "html", 
+        col.names = c("Clickbait Type", "Count", "Mean Reach", "Median Reach", 
+                      "Min Reach", "Max Reach", "Total Reach"),
+        caption = "Summary Statistics by Clickbait Type") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = F, position = "left")
 
 ```
 
-
+### calculates summary statistics for reach, and then merges these results with the descriptions of each source type
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
@@ -360,14 +380,24 @@ result <- summary_stats %>%
   left_join(izvori, by = c(`IZVORI...IZJAVE` = "number"))
 
 # Display the result
-print(result)
-
+result %>%
+  select(text, count, mean_reach, median_reach, min_reach, max_reach, total_reach) %>%
+  kable(format = "html", 
+        col.names = c("Source Type", "Count", "Mean Reach", "Median Reach", 
+                      "Min Reach", "Max Reach", "Total Reach"),
+        caption = "Summary Statistics by Source Type") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = F, position = "left")
 
 
 
 ```
 
-```{r}
+
+### correlation between different clickbait types across industries/correlation matrix to examine relationships between clickbait usage in various industries.
+
+
+```{r  echo=F, eval=T, message=F , warning= FALSE}
 
 
 
@@ -387,8 +417,13 @@ final_summary <- summary_with_industry %>%
   left_join(clickbait, by = c("CLICKBAIT" = "number"))
 
 # View the final table
-print(final_summary)
-
+# final_summary %>%
+#   select(category, text, N, percent) %>%
+#   kable(format = "html", 
+#         col.names = c("Industry", "Clickbait Type", "Count", "Percentage"),
+#         caption = "Distribution of Clickbait Types Across Industries") %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+#                 full_width = F, position = "left")
 # Optionally, calculate correlations between industries and clickbait types
 # You could reshape the data to a wide format and then calculate correlations if needed
 
@@ -400,11 +435,164 @@ wide_summary <- final_summary %>%
 # Calculate correlations
 correlations <- cor(wide_summary[-1], use = "pairwise.complete.obs")
 
-print(correlations)
+#print(correlations)
 
+correlation_df <- as.data.frame(round(correlations, 2))
+
+# Display the correlation matrix as a nicely formatted HTML table
+correlation_df %>%
+  rownames_to_column(var = "Clickbait Type") %>%
+  kable(format = "html", 
+        caption = "Correlation Matrix of Clickbait Types Across Industries") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = F, position = "left")
+
+```
+
+### correlation between different source types across industries/correlation matrix to explore how different source types are used together within various industrie
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+
+# Step 1: Group by Industry and Source Type
+industry_sources <- dta %>%
+  group_by(INDUSTRIJA, `IZVORI...IZJAVE`) %>%
+  summarise(Count = n(), .groups = 'drop') %>%
+  left_join(industry_list, by = c("INDUSTRIJA" = "id")) %>%
+  left_join(izvori, by = c("IZVORI...IZJAVE" = "number"))
+
+# Step 2: Reshape Data to Wide Format
+wide_sources <- industry_sources %>%
+  select(category, text, Count) %>%
+  spread(key = text, value = Count, fill = 0)
+
+# Step 3: Calculate the Correlation Matrix
+correlation_matrix <- cor(wide_sources[-1], use = "pairwise.complete.obs")
+
+# View the correlation matrix
+#print(correlation_matrix)
+
+
+correlation_df <- as.data.frame(round(correlations, 2))
+
+# Display the correlation matrix as a nicely formatted HTML table
+correlation_df %>%
+  rownames_to_column(var = "Source Type") %>%
+  kable(format = "html", 
+        caption = "Correlation Matrix of Source Types Across Industries") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = F, position = "left")
+
+```
+
+
+
+
+
+
+### how different clickbait types are distributed across various industries
+
+
+
+
+```{r fig.height=12, fig.width=10, echo=F, eval=T, message=F , warning= FALSE}
+industry_clickbait <- dta %>%
+  group_by(INDUSTRIJA, CLICKBAIT) %>%
+  summarise(Count = n(), .groups = 'drop') %>%
+  left_join(industry_list, by = c("INDUSTRIJA" = "id")) %>%
+  left_join(clickbait, by = c("CLICKBAIT" = "number"))
+
+# Step 2: Calculate Percentages within each Industry
+industry_clickbait <- industry_clickbait %>%
+  group_by(INDUSTRIJA) %>%
+  mutate(Percent = round(Count / sum(Count) * 100, 2)) %>%
+  ungroup()
+
+# Step 3: Create a Table Showing Distribution
+# You can simply view the table
+# industry_clickbait %>%
+#   select(category, text, Count, Percent) %>%
+#   kable(format = "html", 
+#         col.names = c("Industry", "Clickbait Type", "Count", "Percentage"),
+#         caption = "Distribution of Clickbait Types Across Industries") %>%
+#   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+#                 full_width = F, position = "left")
+# Optional Step: Create a Heatmap for Visualization
+ggplot(industry_clickbait, aes(x = category, y = text, fill = Percent)) +
+  geom_tile() +
+  scale_fill_gradient(low = "white", high = "blue") +
+  labs(title = "Distribution of Clickbait Types Across Industries",
+       x = "Industry",
+       y = "Clickbait Type",
+       fill = "Percentage") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+
+### how different source types are distributed across various industries
+
+
+
+```{r fig.height=12, fig.width=10, echo=F, eval=T, message=F , warning= FALSE}
+
+
+
+
+# Assuming 'dta' is your data frame with 'INDUSTRIJA' and 'IZVORI...IZJAVE' columns
+
+# Step 1: Group by Industry and Source Type
+industry_sources <- dta %>%
+  group_by(INDUSTRIJA, `IZVORI...IZJAVE`) %>%
+  summarise(Count = n(), .groups = 'drop') %>%
+  left_join(industry_list, by = c("INDUSTRIJA" = "id")) %>%
+  left_join(izvori, by = c("IZVORI...IZJAVE" = "number"))
+
+# Step 2: Calculate Percentages within each Industry
+industry_sources <- industry_sources %>%
+  group_by(INDUSTRIJA) %>%
+  mutate(Percent = round(Count / sum(Count) * 100, 2)) %>%
+  ungroup()
+
+# Step 3: Create a Table Showing Distribution
+# You can simply view the table
+#print(industry_sources)
+
+# Optional Step: Create a Heatmap for Visualization
+ggplot(industry_sources, aes(x = category, y = text, fill = Percent)) +
+  geom_tile() +
+  scale_fill_gradient(low = "white", high = "blue") +
+  labs(title = "Distribution of Source Types Across Industries",
+       x = "Industry",
+       y = "Source Type",
+       fill = "Percentage") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
