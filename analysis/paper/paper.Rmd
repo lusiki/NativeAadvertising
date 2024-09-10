@@ -62,10 +62,23 @@ The concentration of so-called hybrid forms of media content in the contemporary
 
 The theoretical basis of this paper is the thesis that native advertising is “an extension of content marketing and provides marketers with a platform to place content in front of a wider audience they wouldn't ordinarily reach” (Crook, 2022). Although there are authors who highlight certain criteria by which content marketing differs from native advertising, which will be described in more detail later in the paper, the ultimate goal is common: to drive profitable customer action. The profitability of such market communication for organizations and brands is demonstrated by recent metrics. Figures show that 47% of marketing professionals globally believe in the effectiveness of this type of advertising (Kloot, 2022), and that in 2023, spending on native advertising in the United States increased by 12% compared to the previous year (eMarketer, 2023). Thus, with more than 97 billion US dollars invested, native advertising holds the largest share (59.7%) of the total expenditure for all types of advertising (eMarketer, 2023).
 
+# Native advertising and content marketing – two faces of the same coin?
 
+Charmaine Du Plessis (2015a) defines content marketing as sharing brand content via owned media to gain earned media, which clearly implies that it is not a type of media content that is paid for, as (native) advertising certainly is. In this context, Du Plessis employs the classic PESO model of media content in public relations (Dietrich, 2014), which distinguishes paid media (advertising or other sponsored content); earned media (publicity generated from media pitches or news releases); shared media (content shared and re-shared on social media); and owned media (such as company’s website, newsletter, or email communications). The order in the PESO model has long reflected the priorities of organizations in media strategy planning. However, recent research (Macnamara, Lwin, Adi & Zerfass, 2016) indicates a shift in the order in practice, with the dominance shifting to the SOEP model instead of the classic PESO model. The reasons for this are manifold, but the most indicative is that owned and earned media content are trusted more than paid media, while shared media (i.e., “recommendations from people I know” and “consumer opinions posted online”) are the most trusted information sources of all (Nielsen, 2015).
+Like Du Plessis, other authors (Handley & Chapman, 2011; Halvorson & Rach, 2012) also differentiate content marketing from other forms of hybrid content exclusively based on the distribution channel (owned media). However, there are authors who leave much more room for interpretation, not strictly confining it to owned media that later generates earned media (publicity). Their definitions are more focused on the strategy, intent, and ultimate goal of content marketing, rather than on the tactics and type of media content within the PESO framework. For instance, they highlight that content marketing is “a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content” (Pulizzi & Piper, 2023; CMI, 2024), which is disseminated on various platforms such as newspapers, magazines, TV, or radio channels (Holliman & Rowley, 2014). 
+
+The distribution of valuable, relevant, and consistent content is also at the core of native advertising (Campbell & Marks, 2015; Kim, 2017), which is especially evident in so-called branded or native content. According to the Interactive Advertising Bureau (IAB), there are three fundamental forms of native advertising: In-Feed/In-Content native advertising, Content Recommendation Ads, and Branded/native content. The latter refers to “paid content by a brand that is published in the same format as full-fledged editorial content on the publisher's website, usually in collaboration with the publisher's own teams” (IAB, 2019, p. 14). This form of native advertising will be the focus of the research part of this paper for two main reasons: it conceptually correlates with the forms and tactics of content marketing, and it is the only form among the mentioned types of native advertising that can be approached analytically.
+
+Types and tactics of content marketing typically include blogs, infographics, video content, photos, webinars, podcasts and social media (Halligan & Shah, 2010; Handley & Chapman, 2011; Bloomstein, 2012; Wuebben, 2012; Vibrant Publishers, 2020), but also paid ads (Baker, 2024), such as sponsored advertising options on social media, affiliate marketing, remarketing, native ads etc. (Jefferson & Tanton, 2015). It is yet another proof of the inconsistent interpretation of content marketing as something that is disseminated exclusively via owned media. It is more appropriate to consider content marketing as a set of tactics that, among other things, can drive traffic back to the website of some company or product (owned media). It is also noticeable that some authors of definitions avoid identifying content marketing with product advertising which aims at the purchase of a product or service (Patrutiu Baltes, 2015), seeking to further differentiate it from other related marketing tactics. The fact is that content marketing is part of an inbound marketing strategy, which, unlike the outbound strategy, is focused on “attracting valuable consumers (potential, existing, or aspirational) who choose to interact with a particular company that provides them with something useful” (Opreana & Vinerean, 2015, p. 29). However, it is misguided to claim that the ultimate goal of any marketing communication, including content marketing, is not sales or gaining profit (Rowley, 2008; Pulizzi & Piper, 2023). Furthermore, both academics and practitioners agree that content marketing relies on a consumer-centric strategy (Ho, Pang & Choy, 2020). In conclusion, regardless of the type of marketing communication, whether it is content marketing, native advertising, or brand journalism - although one can discuss nuanced tactics and approaches to attract consumers into the marketing funnel and later motivate them for retention and advocacy phases - profitable customer action remains the intrinsic motive of every organization or brand.
+
+Previous research does not encompass the analysis of native advertising as part of content marketing; rather, these concepts have been the focus of separate studies. Thus, insights in the context of native advertising relate to the analysis of readers' cognitive perception of native ads and their persuasive elements (Wojdynski & Evans, 2016), analysis of communication strategies in native ads (Wang & Li, 2017), perception of the organization or the sponsor of native ads and its socially responsible activities (Jung & Heo, 2018; Krouwer, Poels & Paulussen, 2019; Beckert, Koch, Viererbl, Denner, & Peter, 2020; Wu & Overton, 2021), perception of the credibility of online portals that publish native ads (Howe & Teufel, 2014), and analysis of the basic features of native ads based on the most-read selected Croatian online portals (Trbušić et al., 2024). Research in the field of content marketing primarily reflects valuable theoretical contributions, such as conceptual definitions, classification of types and forms of content marketing, identification of strategies and tactics of content marketing in the digital environment (Koiso-Kanttila, 2004; Rowley, 2008; Handley & Chapman, 2011; Bloomstein, 2012; Wuebben, 2012; Pulizzi, 2014; Jefferson & Tanton, 2015; Vinerean, 2017; Pulizzi & Piper, 2023), and the definition of six fundamental elements of content marketing which should be considered by marketers (Du Plessis, 2015a; Du Plessis, 2015b). Empirically, content marketing has been analysed as part of B2B strategies on digital channels (Holliman & Rowley, 2014) or in the context of content creation practices in successful companies (Du Plessis, 2015c; Ho et al., 2020). Additionally, studies have addressed the causal linkage between content marketing and online consumer behaviour (Du Plessis, 2022) and content marketing as part of business strategy in the luxury industry (Rios, 2016).
+
+# Methodology and analytical design
+
+The objective of this study is to determine the content characteristics of native advertisements (as one of the content marketing strategies) on the most-read Croatian internet portals. Additionally, the study aims to establish whether there is a relationship between the characteristics of native ad headlines and content with audience reach. Attention is also directed towards the specific practices observed in different industries, particularly the diverse approaches employed by sponsors of native advertisements.
 
 <details>
-<summary>Click to expand the code chunk</summary>
+<summary>Import libraries/click to see the code</summary>
 
 ```{r warning=FALSE, message=FALSE}
 
@@ -86,31 +99,13 @@ library(kableExtra)
 
 </details>
 
-
-# Native advertising and content marketing – two faces of the same coin?
-
-Charmaine Du Plessis (2015a) defines content marketing as sharing brand content via owned media to gain earned media, which clearly implies that it is not a type of media content that is paid for, as (native) advertising certainly is. In this context, Du Plessis employs the classic PESO model of media content in public relations (Dietrich, 2014), which distinguishes paid media (advertising or other sponsored content); earned media (publicity generated from media pitches or news releases); shared media (content shared and re-shared on social media); and owned media (such as company’s website, newsletter, or email communications). The order in the PESO model has long reflected the priorities of organizations in media strategy planning. However, recent research (Macnamara, Lwin, Adi & Zerfass, 2016) indicates a shift in the order in practice, with the dominance shifting to the SOEP model instead of the classic PESO model. The reasons for this are manifold, but the most indicative is that owned and earned media content are trusted more than paid media, while shared media (i.e., “recommendations from people I know” and “consumer opinions posted online”) are the most trusted information sources of all (Nielsen, 2015).
-Like Du Plessis, other authors (Handley & Chapman, 2011; Halvorson & Rach, 2012) also differentiate content marketing from other forms of hybrid content exclusively based on the distribution channel (owned media). However, there are authors who leave much more room for interpretation, not strictly confining it to owned media that later generates earned media (publicity). Their definitions are more focused on the strategy, intent, and ultimate goal of content marketing, rather than on the tactics and type of media content within the PESO framework. For instance, they highlight that content marketing is “a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content” (Pulizzi & Piper, 2023; CMI, 2024), which is disseminated on various platforms such as newspapers, magazines, TV, or radio channels (Holliman & Rowley, 2014). 
-
-The distribution of valuable, relevant, and consistent content is also at the core of native advertising (Campbell & Marks, 2015; Kim, 2017), which is especially evident in so-called branded or native content. According to the Interactive Advertising Bureau (IAB), there are three fundamental forms of native advertising: In-Feed/In-Content native advertising, Content Recommendation Ads, and Branded/native content. The latter refers to “paid content by a brand that is published in the same format as full-fledged editorial content on the publisher's website, usually in collaboration with the publisher's own teams” (IAB, 2019, p. 14). This form of native advertising will be the focus of the research part of this paper for two main reasons: it conceptually correlates with the forms and tactics of content marketing, and it is the only form among the mentioned types of native advertising that can be approached analytically.
-
-Types and tactics of content marketing typically include blogs, infographics, video content, photos, webinars, podcasts and social media (Halligan & Shah, 2010; Handley & Chapman, 2011; Bloomstein, 2012; Wuebben, 2012; Vibrant Publishers, 2020), but also paid ads (Baker, 2024), such as sponsored advertising options on social media, affiliate marketing, remarketing, native ads etc. (Jefferson & Tanton, 2015). It is yet another proof of the inconsistent interpretation of content marketing as something that is disseminated exclusively via owned media. It is more appropriate to consider content marketing as a set of tactics that, among other things, can drive traffic back to the website of some company or product (owned media). It is also noticeable that some authors of definitions avoid identifying content marketing with product advertising which aims at the purchase of a product or service (Patrutiu Baltes, 2015), seeking to further differentiate it from other related marketing tactics. The fact is that content marketing is part of an inbound marketing strategy, which, unlike the outbound strategy, is focused on “attracting valuable consumers (potential, existing, or aspirational) who choose to interact with a particular company that provides them with something useful” (Opreana & Vinerean, 2015, p. 29). However, it is misguided to claim that the ultimate goal of any marketing communication, including content marketing, is not sales or gaining profit (Rowley, 2008; Pulizzi & Piper, 2023). Furthermore, both academics and practitioners agree that content marketing relies on a consumer-centric strategy (Ho, Pang & Choy, 2020). In conclusion, regardless of the type of marketing communication, whether it is content marketing, native advertising, or brand journalism - although one can discuss nuanced tactics and approaches to attract consumers into the marketing funnel and later motivate them for retention and advocacy phases - profitable customer action remains the intrinsic motive of every organization or brand.
-
-Previous research does not encompass the analysis of native advertising as part of content marketing; rather, these concepts have been the focus of separate studies. Thus, insights in the context of native advertising relate to the analysis of readers' cognitive perception of native ads and their persuasive elements (Wojdynski & Evans, 2016), analysis of communication strategies in native ads (Wang & Li, 2017), perception of the organization or the sponsor of native ads and its socially responsible activities (Jung & Heo, 2018; Krouwer, Poels & Paulussen, 2019; Beckert, Koch, Viererbl, Denner, & Peter, 2020; Wu & Overton, 2021), perception of the credibility of online portals that publish native ads (Howe & Teufel, 2014), and analysis of the basic features of native ads based on the most-read selected Croatian online portals (Trbušić et al., 2024). Research in the field of content marketing primarily reflects valuable theoretical contributions, such as conceptual definitions, classification of types and forms of content marketing, identification of strategies and tactics of content marketing in the digital environment (Koiso-Kanttila, 2004; Rowley, 2008; Handley & Chapman, 2011; Bloomstein, 2012; Wuebben, 2012; Pulizzi, 2014; Jefferson & Tanton, 2015; Vinerean, 2017; Pulizzi & Piper, 2023), and the definition of six fundamental elements of content marketing which should be considered by marketers (Du Plessis, 2015a; Du Plessis, 2015b). Empirically, content marketing has been analysed as part of B2B strategies on digital channels (Holliman & Rowley, 2014) or in the context of content creation practices in successful companies (Du Plessis, 2015c; Ho et al., 2020). Additionally, studies have addressed the causal linkage between content marketing and online consumer behaviour (Du Plessis, 2022) and content marketing as part of business strategy in the luxury industry (Rios, 2016).
-
-# Methodology and analytical design
-
-The objective of this study is to determine the content characteristics of native advertisements (as one of the content marketing strategies) on the most-read Croatian internet portals. Additionally, the study aims to establish whether there is a relationship between the characteristics of native ad headlines and content with audience reach. Attention is also directed towards the specific practices observed in different industries, particularly the diverse approaches employed by sponsors of native advertisements.
-
 The sample for the study consists of native advertisements published over a six-month period (December 2021 – May 2022) on the six most-read Croatian internet portals (index.hr, jutarnji.hr, vecernji.hr, 24sata.hr, telegram.hr, slobodnadalmacija.hr), which were identified as the most influential online media in the Croatian digital space based on visitor criteria (Peruško, 2023). Following a machine-based pre-analysis that included all posts on Croatian internet portals during the observed period, totalling over 1.5 million posts on 5,104 web pages, a representative sample was selected based on visit frequency, specifically from the largest Croatian internet portals. A machine search was conducted using keywords and phrases in the content or headlines. The keywords used to identify native content included phrases such as “paid content”, “sponsored content”, “native”, “content provided by”, “content created by”, “powered by” and “tnative”, as native content should be clearly identified as such in the media. After filtering all articles from the six-month period that matched these keywords, a total of 811 articles were identified, from which non-native articles, primarily sponsored or PR content and other irrelevant materials, were manually excluded. The final sample for the study consisted of 543 native advertisements across the six internet portals noted for their influence and readership in Croatia. Prior to determining the research sample, it was confirmed that all analysed internet portals offer native advertising services through a review of their publicly available marketing, advertising, and public relations pricing lists.
 
 
 <details>
-<summary>Click to expand the code chunk</summary>
+<summary>Import data/click to see the code</summary>
 
 ```{r warning=FALSE, message=FALSE}
-
-
 
 original <- read.xlsx(here("analysis", "data", "raw_data", "native_articles.xlsx"), sheetIndex = 1) %>%
   mutate(V1 = as.numeric(V1))
@@ -126,21 +121,12 @@ dta <- merge(original %>% filter(V1 %in% variables$V1),
 dta$DATE <- as.Date(dta$DATE)
 
 
-
-
-
-
-
-
-
 stemmed <- readRDS("C:/Users/Lukas/Dropbox/Mediatoolkit/native_token_stemm.rds")
 stemmed <- readRDS("C:/Users/lukas/Dropbox/Članci/Native rad/native_token_stemm.rds")
 
 stemmed <- stemmed %>%
   rename("wordp" = "word") %>%
   rename("word" = "transformed_column")
-
-
 
 ```
 </details>
@@ -152,15 +138,14 @@ The research on a sample of 543 native advertisements published between December
 
 For the purposes of this study, two general categories were observed, in line with content marketing types and typologies: headline characteristics and content characteristics of native advertisements. The focus was on categorizing headline types, their connection with the advertiser's brand, and identifying the type of clickbait headline. The content analysis of native articles focused on the type of visual equipment (photo, video, infographic, graphics, combinations of these) and its relationship with the advertiser's visual identity, as well as the representation of different types of sources/statements (source from the organization/company, brand ambassador, influencer/celebrity, direct user of the product or service, multiple sources) in native ads. The study also examined whether certain types of native ad headlines were more prevalent or characteristic of different industries. Similarly, the types of statements found in the analysed native ads were compared and observed concerning the industry type and the reach of each ad.
 
-# Results and Discussion
+
+# Reults and discussion
 
 Of the total 543 analysed native advertisements published over a six-month period (December 2021 – May 2022) on six Croatian internet portals that meet the criteria of visit frequency and relevance (jutarnji.hr, index.hr, vecernji.hr, 24sata.hr, telegram.hr, slobodnadalmacija.hr), nearly four-fifths (79.01%) were found to contain clickbait headlines.
 
-In determining clickbait headlines, the categorization provided by Chen et al. (2015) was used: vague pronouns, uncertainty, reverse narrative style, emphasis on emotions, and the use of numbers. The study revealed that the most prevalent clickbait headlines were those characterized by uncertainty (44.38%). Multiple combinations of styles within headlines were observed in 13.81% of the ads, while 20.99% of the headlines exhibited no clickbait characteristics at all. Headlines dominated by numerical content appeared in 9.39% of cases, while 5.89% of headlines emphasized emotional appeal. Headlines using vague pronouns were noted in 4.97% of cases, and the reverse narrative style was registered in 0.55% of the ads.
-
 
 <details>
-<summary>Click to expand the code chunk</summary>
+<summary>Some descriptive statistics/click to see the code</summary>
 ```{r warning=FALSE, message=FALSE,error=FALSE, echo=FALSE, results='hide'}
 
 industry_list <- data.frame(
@@ -264,19 +249,11 @@ IND_kable
 
 ```
 
-</details>
-
-
-
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=T, message=F , warning= FALSE, results='hide'}
 IND_kable
 ```
 
-
-### summarizes the total reach per portal, provides descriptive statistics for reach, and creates a histogram of reach values (filtered to be between 0 and 30,000)
-
-
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=T, message=F , warning= FALSE, results='hide'}
 # Portals by reach
 reach <- dta %>%
   group_by(FROM) %>%
@@ -307,17 +284,20 @@ hist(filtered_dta$REACH,
 ```
 
 
+</details>
 
-### summary statistics for reach (mean, median, min, max, total). It then connects these statistics with the corresponding clickbait descriptions
+
+In determining clickbait headlines, the categorization provided by Chen et al. (2015) was used: vague pronouns, uncertainty, reverse narrative style, emphasis on emotions, and the use of numbers. The study revealed that the most prevalent clickbait headlines were those characterized by uncertainty (44.38%). Multiple combinations of styles within headlines were observed in 13.81% of the ads, while 20.99% of the headlines exhibited no clickbait characteristics at all. Headlines dominated by numerical content appeared in 9.39% of cases, while 5.89% of headlines emphasized emotional appeal. Headlines using vague pronouns were noted in 4.97% of cases, and the reverse narrative style was registered in 0.55% of the ads.
+
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 # Create the clickbait DataFrame
 clickbait <- data.frame(
   number = c(1, 2, 3, 4, 5, 6, 7),
-  text = c("Nedefinirane zamjenice", "Neizvjesnost", "Stil obrnutog narativa",
-           "Naglašavanje emocija", "Korištenje brojkama", "Više kombinacija",
-           "Nije clickbait naslov")
+  text = c("Use of vague pronouns", "Uncertainty", "Reverse narrative style",
+           "Emphasis on emotions", "Use of numbers", "Multiple combinations",
+           "Not a clickbait headline")
 )
 
 # Assuming 'dta' is your data frame and it contains 'REACH' and 'CLICKBAIT' columns
@@ -343,7 +323,7 @@ result %>%
   kable(format = "html", 
         col.names = c("Clickbait Type", "Count", "Mean Reach", "Median Reach", 
                       "Min Reach", "Max Reach", "Total Reach"),
-        caption = "Summary Statistics by Clickbait Type") %>%
+        caption = "Table 1: Prevalence and reach of clickbait headline characteristics in the analysed native ads (n=543)") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
                 full_width = F, position = "left")
 
@@ -371,23 +351,69 @@ This comprehensive analysis provides a clear view of the effectiveness of differ
 In most of the analysed native ads (94.48%), the advertiser's brand name was not mentioned in the headline, while in 5.52% of cases, or in thirty out of the 543 articles, the brand name was included in the headline. Most headlines, 71.09%, were declarative sentences, while one-fifth of the headlines (20.26%) were interrogative, and 8.95% were exclamatory sentences. In terms of content characteristics of the observed native ads, it is noteworthy that all analysed ads featured visual content, with photographs being the most prominent, either alone or in combination with other types of visual content. As shown in Table 2, 73.67% of the ads were equipped exclusively with photographic content, while in 11.97% of cases, both photographs and graphics were included. In 11.05% of the ads, photographs were accompanied by video content, and in 2.39% of cases, the native ads contained a combination of photo, video, and graphics.
 
 
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+# Create the 'oprema' DataFrame
+oprema <- data.frame(
+  number = c(1, 2, 3, 4, 5, 6, 7, 8),
+  text = c(
+    "Photo content",
+    "Video content",
+    "Graphics or infographics",
+    "Photo and video content",
+    "Photo and graphics content",
+    "Video and graphics content",
+    "Photo, video, and graphics content",
+    "Article lacks visual elements"
+  )
+)
 
 
-### calculates summary statistics for reach, and then merges these results with the descriptions of each source type
 
+# Grouping, summarizing, and calculating percentages
+result <- dta %>%
+  group_by(OPREMA) %>%
+  summarise(N = n()) %>%
+  mutate(percent = round(N / sum(N) * 100, 2)) %>%
+  arrange(desc(N)) %>%
+  left_join(oprema, by = c("OPREMA" = "number"))
+
+# Create a beautiful table
+result %>%
+  select(text, N, percent) %>%
+  kable("html", col.names = c("Description", "Count", "%")) %>%
+  add_header_above(c("Table 2. Type of visual equipment" = 3)) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "left") %>%
+  column_spec(1, width = "30em") %>%
+  column_spec(2, width = "10em") %>%
+  column_spec(3, width = "10em")
+
+
+```
+
+
+
+
+
+The advertiser's logo, or elements of the advertiser's visual identity, were included in the visual content of the analysed native ads in 34.44% of cases, while in 356 out of 543 analysed articles, this was not the case, meaning they did not contain a visual link to the advertiser.
+
+Regarding the content characteristics of native ads in this study, the types of sources or statements in the articles were also observed, as shown in Table 3. The ratio of ads using sources to those that do not is approximately similar, with the most common sources in the ads being individuals from the organization, i.e., the advertiser (19.71%). The second most common sources, with a prevalence of 10.31%, were those not directly connected to the product or service, while multiple sources were present in 7.55% of the ads, and in 6.81% of the ads, there was testimony or a statement from a person presented as a direct user of the product or service. Celebrities were also used as sources in native ads, with brand ambassadors’ statements used in 4.79% of cases, and influencers or celebrities were present in 3.5% of the analysed ads.
+
+Table 3. Representation of different types of sources in the statements and reach (n=543)
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 # Create the 'izvori' DataFrame
 izvori <- data.frame(
   number = c(1, 2, 3, 4, 5, 6, 7),
   text = c(
-    "Nema izvora / izjave",
-    "Izvor iz organizacije / tvrtke",
-    "Brend ambasador",
-    "Influencer, celebrity, slavna / poznata osoba",
-    "Korisnik proizvoda ili usluge (poduzetnik, Marica iz Benkovca)",
-    "Više izvora",
-    "Izvor nepovezan s proizvodom ili uslugom koja se promovira"
+    "No source / statement",
+    "Source from the organization / company",
+    "Brand ambassador",
+    "Influencer / celebrity",
+    "Direct user of the product or service",
+    "Multiple sources",
+    "Source unrelated to the product or service"
   )
 )
 
@@ -414,7 +440,7 @@ result %>%
   kable(format = "html", 
         col.names = c("Source Type", "Count", "Mean Reach", "Median Reach", 
                       "Min Reach", "Max Reach", "Total Reach"),
-        caption = "Summary Statistics by Source Type") %>%
+        caption = "Table 3. Representation of different types of sources in the statements and reach (n=543)") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
                 full_width = F, position = "left")
 
@@ -422,29 +448,12 @@ result %>%
 
 ```
 
+In the analysis of Table 3, various types of sources were examined in relation to their impact on the reach of native ads. The findings reveal distinct differences in the effectiveness of advertising strategies based on the source type. Native ads featuring a statement from brand ambassador have an average reach of 10,057.192, similar in effectiveness to ads without a source. The median reach is 9,719, indicating consistent performance just below the mean. The minimum reach is 1,558, reflecting a decent baseline level of engagement. The maximum reach is 31,308 and the total reach is 261,487, which, while lower, still represents a significant impact given the smaller number of ads in this category.
+
+As final of the categories, native ads featuring a statement given by influencer or celebrity achieve one of the highest average reaches at 14,645.789, indicating strong effectiveness compared to other types of sources. The median reach is 14,797, suggesting very consistent and high engagement. The minimum reach is 9,975, the highest minimum reach across all categories, showing that these ads generally perform well. The maximum reach is 21,300, indicating strong potential for high engagement, though not as high as ads using multiple sources. The total reach is 278,270, which is impressive given the relatively small number of ads, highlighting the high effectiveness of this strategy.
 
 
-The advertiser's logo, or elements of the advertiser's visual identity, were included in the visual content of the analysed native ads in 34.44% of cases, while in 356 out of 543 analysed articles, this was not the case, meaning they did not contain a visual link to the advertiser.
-Regarding the content characteristics of native ads in this study, the types of sources or statements in the articles were also observed, as shown in Table 3. The ratio of ads using sources to those that do not is approximately similar, with the most common sources in the ads being individuals from the organization, i.e., the advertiser (19.71%). The second most common sources, with a prevalence of 10.31%, were those not directly connected to the product or service, while multiple sources were present in 7.55% of the ads, and in 6.81% of the ads, there was testimony or a statement from a person presented as a direct user of the product or service. Celebrities were also used as sources in native ads, with brand ambassadors’ statements used in 4.79% of cases, and influencers or celebrities were present in 3.5% of the analysed ads.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### correlation between different clickbait types across industries/correlation matrix to examine relationships between clickbait usage in various industries.
-
-
-```{r  echo=F, eval=T, message=F , warning= FALSE}
+```{r  echo=F, eval=T, message=F , warning= FALSE, results='hide'}
 
 
 
@@ -496,34 +505,7 @@ correlation_df %>%
 
 ```
 
-
-
-
-In the analysis of Table 3, various types of sources were examined in relation to their impact on the reach of native ads. The findings reveal distinct differences in the effectiveness of advertising strategies based on the source type. Native ads featuring a statement from brand ambassador have an average reach of 10,057.192, similar in effectiveness to ads without a source. The median reach is 9,719, indicating consistent performance just below the mean. The minimum reach is 1,558, reflecting a decent baseline level of engagement. The maximum reach is 31,308 and the total reach is 261,487, which, while lower, still represents a significant impact given the smaller number of ads in this category.
-
-As final of the categories, native ads featuring a statement given by influencer or celebrity achieve one of the highest average reaches at 14,645.789, indicating strong effectiveness compared to other types of sources. The median reach is 14,797, suggesting very consistent and high engagement. The minimum reach is 9,975, the highest minimum reach across all categories, showing that these ads generally perform well. The maximum reach is 21,300, indicating strong potential for high engagement, though not as high as ads using multiple sources. The total reach is 278,270, which is impressive given the relatively small number of ads, highlighting the high effectiveness of this strategy.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### correlation between different source types across industries/correlation matrix to explore how different source types are used together within various industrie
-
-
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r echo=F, eval=T, message=F , warning= FALSE, results='hide'}
 
 
 
@@ -559,20 +541,6 @@ correlation_df %>%
 ```
 
 
-The histogram titled “Distribution of Clickbait Types Across Industries” (Histogram 1) illustrates the prevalence of various clickbait headline techniques across a range of industries. The chart visually represents how different sectors employ specific strategies to attract audience engagement, with colour intensity indicating the percentage of ads that utilize each technique within each industry (darkest shade of blue indicate maximal prevalence of each technique within the industry, while lighter shades close to purple and all the way to white, indicate lower intensity – as shown in legend). 
-
-In general, the data reveal that most industries adopt a mix of clickbait strategies, tailored to the nature of their content and target audience. However, distinct patterns emerge, showing that certain sectors exhibit a clear preference for specific techniques. For instance, industries dealing with uncertainty, especially in contemporary times, such as financial services, healthcare and energetics sector, tend to favour headlines that evoke uncertainty to engage readers, which is also most widely used technique across industries. 
-
-Conversely, sectors like shipbuilding prefer straightforward, non-clickbait headlines, likely reflecting the technical and factual nature of their content, while this technique is also widely used in fashion industry, as the data displayed in Histogram 1 is showing. When it comes to the specific types of clickbait, the use of multiple combinations of techniques is particularly prominent in the movie industry along with fashion, and arts & culture sector, indicating this strategic approach to maximizing engagement. The reverse narrative style, though generally less commonly used, finds notable application in the sports industry, suggesting that reversing the expected narrative could be effective in this sector. This technique is also used in minimal amounts in retail and ICT industries, while the other industries tend not to apply this strategy in their native advertising.
-
-Vague pronouns is also lesser used technique, and it is more favoured approach in media, marketing and digital agencies, along with postal services. In contrast, emotional emphasis is more frequently used in the utility services sector, science and education and alcoholic beverages industry, where emotionally charged messaging can influence consumer behaviour. The use of numbers in headlines is moderately preferred in the retail industries, along with furniture and home appliances industry, and shopping centres where presenting clear, quantifiable information can appeal to a detail-oriented audience.
-
-
-
-
-### how different clickbait types are distributed across various industries
-
-
 
 
 ```{r fig.height=12, fig.width=10, echo=F, eval=T, message=F , warning= FALSE}
@@ -601,25 +569,23 @@ industry_clickbait <- industry_clickbait %>%
 ggplot(industry_clickbait, aes(x = category, y = text, fill = Percent)) +
   geom_tile() +
   scale_fill_gradient(low = "white", high = "blue") +
-  labs(title = "Distribution of Clickbait Types Across Industries",
+  labs(title = "Graph 1: Distribution of different clickbait types across various industries",
        x = "Industry",
        y = "Clickbait Type",
        fill = "Percentage") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+The histogram titled “Distribution of Clickbait Types Across Industries” (Histogram 1) illustrates the prevalence of various clickbait headline techniques across a range of industries. The chart visually represents how different sectors employ specific strategies to attract audience engagement, with colour intensity indicating the percentage of ads that utilize each technique within each industry (darkest shade of blue indicate maximal prevalence of each technique within the industry, while lighter shades close to purple and all the way to white, indicate lower intensity – as shown in legend). 
 
+In general, the data reveal that most industries adopt a mix of clickbait strategies, tailored to the nature of their content and target audience. However, distinct patterns emerge, showing that certain sectors exhibit a clear preference for specific techniques. For instance, industries dealing with uncertainty, especially in contemporary times, such as financial services, healthcare and energetics sector, tend to favour headlines that evoke uncertainty to engage readers, which is also most widely used technique across industries. 
 
-### how different source types are distributed across various industries
+Conversely, sectors like shipbuilding prefer straightforward, non-clickbait headlines, likely reflecting the technical and factual nature of their content, while this technique is also widely used in fashion industry, as the data displayed in Histogram 1 is showing. When it comes to the specific types of clickbait, the use of multiple combinations of techniques is particularly prominent in the movie industry along with fashion, and arts & culture sector, indicating this strategic approach to maximizing engagement. The reverse narrative style, though generally less commonly used, finds notable application in the sports industry, suggesting that reversing the expected narrative could be effective in this sector. This technique is also used in minimal amounts in retail and ICT industries, while the other industries tend not to apply this strategy in their native advertising.
 
+Vague pronouns is also lesser used technique, and it is more favoured approach in media, marketing and digital agencies, along with postal services. In contrast, emotional emphasis is more frequently used in the utility services sector, science and education and alcoholic beverages industry, where emotionally charged messaging can influence consumer behaviour. The use of numbers in headlines is moderately preferred in the retail industries, along with furniture and home appliances industry, and shopping centres where presenting clear, quantifiable information can appeal to a detail-oriented audience.
 
 
 ```{r fig.height=12, fig.width=10, echo=F, eval=T, message=F , warning= FALSE}
-
-
-
-
-# Assuming 'dta' is your data frame with 'INDUSTRIJA' and 'IZVORI...IZJAVE' columns
 
 # Step 1: Group by Industry and Source Type
 industry_sources <- dta %>%
@@ -652,7 +618,6 @@ ggplot(industry_sources, aes(x = category, y = text, fill = Percent)) +
 ```
 
 
-
 The histogram titled “Distribution of Source Types Across Industries” (Histogram 2) illustrates how different types of sources are distributed across various industries in the context of advertising or content creation. The vertical axis lists the source types, while the horizontal axis represents different industries. 
 
 In general, the histogram shows that industries tend to favour certain source types depending on the nature of the industry and its target audience. For example, the “No Source or Statement” category is prominently used across multiple industries, particularly in the movies industry, utility services sector and shopping centres, with maximum prevalence in those areas. The same category, which implies lacking any sources in native adverts is also widely used in automotive industries, along with retail, furniture and home appliances tourism, and postal services. This technique is significantly present in all of industries except shipbuilding, real estate and arts & culture sector, with no articles without statement in this analysis. The use of sources from within the organization or company is second most widely employed technique, and it is most common in sectors like shipbuilding and real estate, where insider knowledge and authority are crucial for establishing trust with the audience. Fashion and beauty industry also widely use this approach, along with arts & culture and ICT sectors, and in political institutions.
@@ -662,7 +627,6 @@ The use of multiple sources is widespread, particularly in the non-alcoholic bev
 Industries such as alcoholic beverages and arts & culture occasionally employ sources unrelated to the product or service, which is the technique also used in betting & lottery sector and postal services, most probably to introduce a fresh perspective or to lend authority from a seemingly impartial standpoint. This technique is less common but can be effective in adding an element of unexpected credibility.
 
 The “Influencer/Celebrity” category is notably prominent in sports industry, and is also used in media, marketing and digital agencies, along with furniture and home appliances industry, implying that these sectors rely on aspirational appeal and the social influence of well-known figures to drive engagement. Similarly to previous category, the use of brand ambassadors shows strength in sports industry, where a consistent and trustworthy spokesperson can help bridge the gap between complex products and the consumer, but this technique is also used in arts & culture and science & education sectors.
-
 
 
 # Conclusion
@@ -677,143 +641,7 @@ Overall, this research highlights the strategic use of clickbait headlines and s
   
 
 
-<!-- <details> -->
-<!-- <summary>Click to expand the code chunk</summary> -->
-
-```{r echo=F, eval=T, message=F , warning= FALSE}
 
 
-# Create the clickbait DataFrame
-clickbait <- data.frame(
-  number = c(1, 2, 3, 4, 5, 6, 7),
-  text = c("Nedefinirane zamjenice", "Neizvjesnost", "Stil obrnutog narativa",
-           "Naglašavanje emocija", "Korištenje brojkama", "Više kombinacija",
-           "Nije clickbait naslov")
-)
-
-# Grouping, summarizing, and calculating percentages
-result <- dta %>%
-  group_by(CLICKBAIT) %>%
-  summarise(N = n()) %>%
-  mutate(percent = round(N / sum(N) * 100, 2)) %>%
-  arrange(desc(N)) %>%
-  left_join(clickbait, by = c("CLICKBAIT" = "number"))
-
-# Create a beautiful table
-result %>%
-  select(text, N, percent) %>%
-  kable("html", col.names = c("Description", "Count", "%")) %>%
-  add_header_above(c("Table 1. Prevalence of clickbait headline characteristics in the analyzed native ads" = 3)) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = FALSE, position = "left") %>%
-  column_spec(1, width = "20em") %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(3, width = "10em")
-
-
-```
-<!-- </details> -->
-
-In the vast majority of the analyzed native ads (94.48%), the advertiser's brand name was not mentioned in the headline, while in 5.52%, or thirty out of the 543 articles, the brand name was included in the headline. Here, we will add the distinction between a sponsored article, which typically mentions the advertiser in the headline, and native advertising, which generally does not, as it employs a subtler advertising tactic.
-
-The majority of the headlines, 71.09%, were declarative sentences, while one-fifth (20.26%) were interrogative, and 8.95% were exclamatory sentences. Regarding the content characteristics of the observed native ads, it is noteworthy that all analyzed ads included visual elements, with photography being the most prominent, either alone or in combination with other types of visual content. As shown in Table 2, in 73.67% of cases, the ads were equipped exclusively with photographic content, while in 11.97% of cases, the ads included both photographic and graphic content. In 11.05% of ads, photographic content was accompanied by video content, and in 2.39% of cases, the native ads contained a combination of photo, video, and graphic content.
-
-
-<!-- <details> -->
-<!-- <summary>Click to expand the code chunk</summary> -->
-
-```{r echo=F, eval=T, message=F , warning= FALSE}
-
-# Create the 'oprema' DataFrame
-oprema <- data.frame(
-  number = c(1, 2, 3, 4, 5, 6, 7, 8),
-  text = c(
-    "Foto-sadržaj",
-    "Video-sadržaj",
-    "Grafika ili infografika (ne uključuje logo)",
-    "Foto i video sadržaj",
-    "Foto i grafički sadržaj",
-    "Video i grafički sadržaj",
-    "Foto, video i grafički sadržaj",
-    "Članak nema nikakvu opremu"
-  )
-)
-
-
-
-# Grouping, summarizing, and calculating percentages
-result <- dta %>%
-  group_by(OPREMA) %>%
-  summarise(N = n()) %>%
-  mutate(percent = round(N / sum(N) * 100, 2)) %>%
-  arrange(desc(N)) %>%
-  left_join(oprema, by = c("OPREMA" = "number"))
-
-# Create a beautiful table
-result %>%
-  select(text, N, percent) %>%
-  kable("html", col.names = c("Description", "Count", "%")) %>%
-  add_header_above(c("Table 2. Type of visual equipment" = 3)) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = FALSE, position = "left") %>%
-  column_spec(1, width = "30em") %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(3, width = "10em")
-
-
-```
-<!-- </details> -->
-
-The advertiser's logo, or elements of the advertiser's visual identity, were featured as part of the visual content in 34.44% of the analyzed native ads. However, in 356 out of the 543 analyzed articles, this was not the case, meaning they did not contain a visual link to the advertiser.
-
-Among the content characteristics of native ads in this study, the types of sources or statements within the articles were also examined, as shown in Table 3. The ratio of ads that use sources to those that do not is approximately similar. Among the ads that include a source, the most common type is a person from the organization or the advertiser (19.71%). The second most prominent, with 10.31% representation, are sources not directly connected to the product or service, while in 7.55% of cases, multiple sources were present. In 6.81% of ads, the source was a testimony or statement from someone presented as a direct user of the product or service. Well-known individuals are also used as sources in native ads; brand ambassadors were used in 4.79% of cases, while influencers or celebrities were featured in 3.5% of the observed ads.
-
-
-<!-- <details> -->
-<!-- <summary>Click to expand the code chunk</summary> -->
-
-```{r echo=F, eval=T, message=F , warning= FALSE}
-
-
-# Create the 'izvori' DataFrame
-izvori <- data.frame(
-  number = c(1, 2, 3, 4, 5, 6, 7),
-  text = c(
-    "Nema izvora / izjave",
-    "Izvor iz organizacije / tvrtke",
-    "Brend ambasador",
-    "Influencer, celebrity, slavna / poznata osoba",
-    "Korisnik proizvoda ili usluge (poduzetnik, Marica iz Benkovca)",
-    "Više izvora",
-    "Izvor nepovezan s proizvodom ili uslugom koja se promovira"
-  )
-)
-
-
-# Grouping, summarizing, and calculating percentages
-result <- dta %>%
-  group_by(`IZVORI...IZJAVE`) %>%
-  summarise(N = n()) %>%
-  mutate(percent = round(N / sum(N) * 100, 2)) %>%
-  arrange(desc(N)) %>%
-  left_join(izvori, by = c("IZVORI...IZJAVE" = "number"))
-
-# Create a beautiful table
-result %>%
-  select(text, N, percent) %>%
-  kable("html", col.names = c("Description", "Count", "%")) %>%
-  add_header_above(c("Table 3. Representation of different types of sources in the statements" = 3)) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = FALSE, position = "left") %>%
-  column_spec(1, width = "30em") %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(3, width = "10em")
-
-```
-<!-- </details> -->
-
-# Conclusion
-
-The conclusion of the research can be summarized through several key points. An analysis of 543 native ads published on six Croatian internet portals showed a significant presence of clickbait titles, where almost 80% of the titles had at least one clickbait characteristic, with the suspense style being most often used. Although a smaller part of the headlines (5.52%) mentioned the brand, most of them were neutral about direct advertising. Titles are mostly declarative sentences, while visual elements, especially photos, were present in all ads, with the advertiser's logo included in 34.44% of cases. In the area of ​​sources of statements, almost half of the articles did not use statements, while in other articles the sources were most often people from the organization, with a relatively small presence of influencers and celebrities. These findings indicate the dominance of clickbait titles and the significant role of visual equipment in native advertising, while direct association with the brand and the use of authoritative sources are less common.
 
 # References
