@@ -334,6 +334,62 @@ result %>%
 ```
 
 
+
+
+
+```{r analysis, echo=F, eval=FALSE, message=F , warning= FALSE, results='hide'}
+
+
+# make a nice historam of the reach in ggplot
+
+# Create the histogram  
+
+ggplot(dta, aes(x = REACH)) + 
+  geom_histogram(binwidth = 1500, fill = "blue", color = "black") +
+  labs(title = "Reach of Portals", x = "Reach", y = "Frequency") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    panel.border = element_rect(fill = NA, color = "black")  # Add border
+  )
+
+# filter this data to max reach of 30000
+
+filtered_dta <- dta %>% filter(REACH >= 0 & REACH <= 30000)
+
+ggplot(filtered_dta, aes(x = REACH)) +
+  geom_histogram(binwidth = 1500, fill = "blue", color = "black") +
+  labs(title = "Reach of Portals", x = "Reach", y = "Frequency") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    panel.border = element_rect(fill = NA, color = "black")  # Add border
+  )
+
+shapiro.test(filtered_dta$REACH)
+
+
+library(car)
+
+leveneTest(mean_reach ~ text, data = result)
+
+
+anova_model <- aov(REACH ~ CLICKBAIT, data = dta)
+summary(anova_model)
+
+TukeyHSD(anova_model)
+
+
+
+
+kruskal.test(REACH ~ CLICKBAIT, data = dta)
+
+
+```
+
+
 In the further analysis of data displayed in Table 1, various clickbait headline techniques were examined to determine their effectiveness in driving audience engagement. The data provide insights into how different strategies influence the reach of advertisements, emphasizing the role of headlines as a primary trigger for audience interaction.
 
 The use of uncertainty as a clickbait technique in native adverts yields an average reach of 11,202.718, indicating a generally high level of engagement compared to other analysed categories. The median reach for this category is 10,051, suggesting that at least half of these ads successfully engage over 10,000 people. The minimum reach recorded is 963, highlighting that even the least successful ads using uncertainty headlines still manage to attract a considerable audience. The maximum reach is an impressive 142,818, demonstrating that some ads in this category have much higher reach compared to other types of clickbait headlines. The total reach across all adverts employing uncertainty is 2,699,855, making it the category with the most substantial overall impact.
