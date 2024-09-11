@@ -540,21 +540,25 @@ oprema <- data.frame(
 # Grouping, summarizing, and calculating percentages
 result <- dta %>%
   group_by(OPREMA) %>%
-  summarise(N = n()) %>%
-  mutate(percent = round(N / sum(N) * 100, 2)) %>%
-  arrange(desc(N)) %>%
+  summarise(
+    count = n(),
+    mean_reach = mean(REACH, na.rm = TRUE),
+    median_reach = median(REACH, na.rm = TRUE),
+    min_reach = min(REACH, na.rm = TRUE),
+    max_reach = max(REACH, na.rm = TRUE),
+    total_reach = sum(REACH, na.rm = TRUE)
+  ) %>%
   left_join(oprema, by = c("OPREMA" = "number"))
 
 # Create a beautiful table
 result %>%
-  select(text, N, percent) %>%
-  kable("html", col.names = c("Description", "Count", "%")) %>%
-  add_header_above(c("Table 2. Type of visual equipment" = 3)) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
-                full_width = FALSE, position = "left") %>%
-  column_spec(1, width = "30em") %>%
-  column_spec(2, width = "10em") %>%
-  column_spec(3, width = "10em")
+  select(text, count, mean_reach, median_reach, min_reach, max_reach, total_reach) %>%
+  kable(format = "html", 
+        col.names = c("Oprema", "Count", "Mean Reach", "Median Reach", 
+                      "Min Reach", "Max Reach", "Total Reach"),
+        caption = "Table 3. Representation of different types of sources in the statements and reach (n=543)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = F, position = "left")
 
 
 ```
