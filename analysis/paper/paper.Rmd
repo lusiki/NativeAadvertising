@@ -380,13 +380,13 @@ kruskal.test(REACH ~ IZVORI...IZJAVE , data = dta)
 
 
 
-# Chi-sq INDUSTRIJA vs IZVOR
+## Chi-sq INDUSTRIJA vs IZVOR
 ```{r}
 chisq.test(dta$INDUSTRIJA, dta$IZVORI...IZJAVE)
 ```
 
 
-# Chi-sq INDUSTRIJA vs CLICKBAIT
+## Chi-sq INDUSTRIJA vs CLICKBAIT
 
 ```{r}
 chisq.test(dta$INDUSTRIJA, dta$CLICKBAIT)
