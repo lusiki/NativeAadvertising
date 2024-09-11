@@ -112,10 +112,10 @@ The data used in the study consists of native advertisements published over a si
 ```{r warning=FALSE, message=FALSE}
 
 dta <- read.xlsx(here("analysis", "data", "raw_data", "dta.xlsx"), sheetIndex = 1) %>%
-  select(REACH, INDUSTRIJA, CLICKBAIT, OPREMA, `IZVORI...IZJAVE`)
+  select(FROM,REACH, INDUSTRIJA, CLICKBAIT, OPREMA, `IZVORI...IZJAVE`)
 ```
 </details>
-
+<br>
 
 Of the total sample of 543 native advertisements, 177 posts, or 32.6%, were from the portal jutarnji.hr, 103 posts or 18.97% from vecernji.hr, and 99 posts or 18.23% from telegram.hr. The portal 24sata.hr accounted for 88 analysed articles or 16.21%, index.hr for 62 or 11.42%, and slobodnadalmacija.hr for 14 native articles or 2.58%.
 
@@ -130,7 +130,7 @@ Of the total 543 analysed native advertisements published over a six-month perio
 
 
 <details>
-<summary>Some descriptive statistics/click to see the code</summary>
+<summary>Some descriptive statistics</summary>
 ```{r warning=FALSE, message=FALSE,error=FALSE, echo=FALSE, results='hide'}
 
 industry_list <- data.frame(
@@ -308,9 +308,95 @@ ggplot(filtered_dta, aes(x = REACH)) +
 
 
 
+```{r analysis2, echo=F, eval=FALSE, message=F , warning= FALSE, results='hide'}
+
+
+# make a nice historam of the reach in ggplot
+
+# Create the histogram  
+
+ggplot(dta, aes(x = REACH)) + 
+  geom_histogram(binwidth = 1500, fill = "blue", color = "black") +
+  labs(title = "Reach of Portals", x = "Reach", y = "Frequency") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    panel.border = element_rect(fill = NA, color = "black")  # Add border
+  )
+
+# filter this data to max reach of 30000
+
+filtered_dta <- dta %>% filter(REACH >= 0 & REACH <= 30000)
+
+ggplot(filtered_dta, aes(x = REACH)) +
+  geom_histogram(binwidth = 1500, fill = "blue", color = "black") +
+  labs(title = "Reach of Portals", x = "Reach", y = "Frequency") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1),
+    panel.grid.major.x = element_blank(),  # Remove vertical grid lines
+    panel.border = element_rect(fill = NA, color = "black")  # Add border
+  )
+
+
+
+```
+
+## Shapiro-Wilk test for normality
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+
+# non filtered
+shapiro.test(dta$REACH)
+
+#filtered
+shapiro.test(filtered_dta$REACH)
+
+```
+
+
+## Kruskal-Wallis test CLICKBAIT vs REACH
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+kruskal.test(REACH ~ CLICKBAIT, data = dta)
+
+```
+## Kruskal-Wallis test CLICKBAIT vs OPREMA
+
+```{r}
+kruskal.test(REACH ~ OPREMA, data = dta)
+## Kruskal-Wallis test CLICKBAIT vs REACH
+```
+## Kruskal-Wallis test CLICKBAIT vs IZJAVA
+
+
+```{r}
+kruskal.test(REACH ~ IZVORI...IZJAVE , data = dta)
+```
+
+
+
+# Chi-sq INDUSTRIJA vs IZVOR
+```{r}
+chisq.test(dta$INDUSTRIJA, dta$IZVORI...IZJAVE)
+```
+
+
+# Chi-sq INDUSTRIJA vs CLICKBAIT
+
+```{r}
+chisq.test(dta$INDUSTRIJA, dta$CLICKBAIT)
+
+
+```
+
 
 </details>
-
+<br>
 
 In determining clickbait headlines, the categorization provided by [@chen2015] was used: vague pronouns, uncertainty, reverse narrative style, emphasis on emotions, and the use of numbers. The study revealed that the most prevalent clickbait headlines were those characterized by uncertainty (44.38%). Multiple combinations of styles within headlines were observed in 13.81% of the ads, while 20.99% of the headlines exhibited no clickbait characteristics at all. Headlines dominated by numerical content appeared in 9.39% of cases, while 5.89% of headlines emphasized emotional appeal. Headlines using vague pronouns were noted in 4.97% of cases, and the reverse narrative style was registered in 0.55% of the ads.
 
