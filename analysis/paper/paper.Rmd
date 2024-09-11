@@ -361,8 +361,11 @@ shapiro.test(filtered_dta$REACH)
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
-
+library(coin)
 kruskal.test(REACH ~ CLICKBAIT, data = dta)
+
+
+
 
 ```
 ## Kruskal-Wallis test CLICKBAIT vs OPREMA
@@ -373,12 +376,9 @@ kruskal.test(REACH ~ OPREMA, data = dta)
 ```
 ## Kruskal-Wallis test CLICKBAIT vs IZJAVA
 
-
 ```{r}
 kruskal.test(REACH ~ IZVORI...IZJAVE , data = dta)
 ```
-
-
 
 ## Chi-sq INDUSTRIJA vs IZVOR
 ```{r}
