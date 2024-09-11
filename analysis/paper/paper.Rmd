@@ -111,27 +111,8 @@ The data used in the study consists of native advertisements published over a si
 
 ```{r warning=FALSE, message=FALSE}
 
-original <- read.xlsx(here("analysis", "data", "raw_data", "native_articles.xlsx"), sheetIndex = 1) %>%
-  mutate(V1 = as.numeric(V1))
-
-variables <- read.xlsx(here("analysis", "data", "raw_data", "native_research.xlsx"), sheetIndex = 1)
-
-dta <- merge(original %>% filter(V1 %in% variables$V1),
-  variables %>% select(-c(23, 24, 25)),
-  by = "V1",
-  all.x = TRUE)
-
-# Convert the 'DATE' column to Date format
-dta$DATE <- as.Date(dta$DATE)
-
-
-stemmed <- readRDS("C:/Users/Lukas/Dropbox/Mediatoolkit/native_token_stemm.rds")
-stemmed <- readRDS("C:/Users/lukas/Dropbox/Članci/Native rad/native_token_stemm.rds")
-
-stemmed <- stemmed %>%
-  rename("wordp" = "word") %>%
-  rename("word" = "transformed_column")
-
+dta <- read.xlsx(here("analysis", "data", "raw_data", "dta.xlsx"), sheetIndex = 1) %>%
+  select(REACH, INDUSTRIJA, CLICKBAIT, OPREMA, `IZVORI...IZJAVE`)
 ```
 </details>
 
@@ -143,7 +124,7 @@ The research on a sample of 543 native advertisements published between December
 For the purposes of this study, two general categories were selected for the analysis, in line with content marketing types and typologies: headline characteristics and content characteristics of native advertisements. The focus was on categorizing headline types, their connection with the advertiser's brand, and identifying the type of clickbait headline. The content analysis of native articles focused on the type of visual equipment (photo, video, infographic, graphics, combinations of these) and its relationship with the advertiser's visual identity, as well as the representation of different types of sources/statements (source from the organization/company, brand ambassador, influencer/celebrity, direct user of the product or service, multiple sources) in native ads. The study also examined whether certain types of native ad headlines were more prevalent or characteristic of different industries. Similarly, the types of statements found in the analysed native ads were compared and observed concerning the industry type and the reach of each ad.
 
 
-# Reults and discussion
+# Results and discussion
 
 Of the total 543 analysed native advertisements published over a six-month period (December 2021 – May 2022) on six Croatian internet portals that meet the criteria of visit frequency and relevance (jutarnji.hr, index.hr, vecernji.hr, 24sata.hr, telegram.hr, slobodnadalmacija.hr), nearly four-fifths (79.01%) were found to contain clickbait headlines.
 
@@ -249,13 +230,52 @@ IND_kable <- IND_final %>%
         caption = "Pregled po industrijama") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)
 
-IND_kable
 
 ```
 
-```{r echo=F, eval=T, message=F , warning= FALSE, results='hide'}
+```{r echo=F, eval=T, message=F , warning= FALSE}
 IND_kable
 ```
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+ggplot(dta, aes(x = INDUSTRIJA)) +
+  geom_histogram(binwidth = 1, fill = "black") +  # Reduced binwidth for thicker bars
+  labs(x = "Industry", y = "Frequency", title = "Industry") +
+  scale_x_continuous(breaks = pretty(dta$REACH, n = 5)) +  # Set exactly 5 breaks on x-axis
+  theme_minimal()
+```
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+ggplot(dta, aes(x = CLICKBAIT)) +
+  geom_histogram(binwidth = 1, fill = "black") +  # Reduced binwidth for thicker bars
+  labs(x = "Clickbait Type", y = "Frequency", title = "Clickbait Type") +
+  scale_x_continuous(breaks = pretty(dta$REACH, n = 5)) +  # Set exactly 5 breaks on x-axis
+  theme_minimal()
+```
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+ggplot(dta, aes(x = OPREMA)) +
+  geom_histogram(binwidth = 1, fill = "black") +  # Reduced binwidth for thicker bars
+  labs(x = "Visual equipment", y = "Frequency", title = "Visual equipment") +
+  scale_x_continuous(breaks = pretty(dta$REACH, n = 5)) +  # Set exactly 5 breaks on x-axis
+  theme_minimal()
+
+
+```
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+ggplot(dta, aes(x = `IZVORI...IZJAVE`)) +
+  geom_histogram(binwidth = 1, fill = "black") +  # Reduced binwidth for thicker bars
+  labs(x = "Source Type", y = "Frequency", title = "Source Type") +
+  scale_x_continuous(breaks = pretty(dta$REACH, n = 5)) +  # Set exactly 5 breaks on x-axis
+  theme_minimal()
+```
+
+
+
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, results='hide'}
 # Portals by reach
@@ -264,7 +284,7 @@ reach <- dta %>%
   summarise(reach = sum(REACH)) %>%
   arrange(desc(reach))
 
-reach
+
 
 
 # make detailed descriptive statistics
@@ -275,17 +295,18 @@ summary(dta$REACH)
 
 filtered_dta <- dta %>% filter(REACH >= 0 & REACH <= 30000)
 
-# Create the histogram
-hist(filtered_dta$REACH, 
-     xlab = "Reach", 
-     ylab = "Frequency", 
-     main = "Reach of Portals", 
-     col = "blue", 
-     breaks = 50)
-
+ggplot(filtered_dta, aes(x = REACH)) +
+  geom_histogram(binwidth = 300, fill = "black") +  # Reduced binwidth for thicker bars
+  labs(x = "Reach", y = "Frequency", title = "Reach of Portals") +
+  scale_x_continuous(breaks = pretty(filtered_dta$REACH, n = 5)) +  # Set exactly 5 breaks on x-axis
+  theme_minimal()
 
 
 ```
+
+
+
+
 
 
 </details>
@@ -462,7 +483,7 @@ Regarding the content characteristics of native ads in this study, the types of 
 
 Table 3. Representation of different types of sources in the statements and reach (n=543)
 
-```{r echo=F, eval=T, message=F , warning= FALSE}
+```{r komm, echo=F, eval=T, message=F , warning= FALSE}
 # Create the 'izvori' DataFrame
 izvori <- data.frame(
   number = c(1, 2, 3, 4, 5, 6, 7),
