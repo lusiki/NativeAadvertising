@@ -33,7 +33,7 @@ footnote:
   - code: 2
     text: "Co-author of the study."
 abstract: |
-  Svrha – Cilj ovog istraživanja je utvrditi karakteristike sadržaja nativnih oglasa (kao jedne od strategija sadržajnog marketinga) na najčitanijim hrvatskim internetskim portalima. Konkretno, istraživanje ima za cilj identificirati ključne karakteristike naslova i sadržaja te njihov odnos s dosegom publike. Metodološki pristup – Strojna predanaliza koja je obuhvatila sve objave na hrvatskim internetskim portalima tijekom promatranog razdoblja rezultirala je definiranjem konačnog uzorka od 543 nativna oglasa na najutjecajnijim internetskim portalima u hrvatskom digitalnom prostoru, temeljenim na kriterijima posjećenosti. Istraživanje na uzorku od 543 nativna oglasa provedeno je metodologijom analize sadržaja. Rezultati i implikacije – Rezultati pokazuju da gotovo 80% naslova sadrži barem jedno obilježje clickbaita, pri čemu je stil neizvjesnosti najčešće korišten i najučinkovitiji. Polovina oglasa nije uključivala nikakve izjave ili izvore, a najčešći izvori su pojedinci iz organizacije ili tvrtke. Učinkovitost različitih vrsta izvora varira ovisno o industriji, pri čemu se višestruki izvori pokazuju najučinkovitijima u sektorima poput bezalkoholnih pića i građevinarstva, dok su izravna svjedočanstva korisnika učinkovitija u tehnologiji i financijama. Ograničenja – Doprinos – Istraživanje naglašava značajnu ulogu clickbait naslova, vizualnog sadržaja i vjerodostojnosti izvora u uspjehu nativnog oglašavanja kao strategije sadržajnog marketinga.
+  Purpose – The objective of this study is to determine the content characteristics of native advertisements (as one of the content marketing strategies) on the most-read Croatian internet portals. Specifically, the study aims to identify key characteristics of headlines and content, and their relationship with audience reach. Design/Methodology/Approach – A machine-based pre-analysis that included all posts on Croatian internet portals during the observed period resulted in defining a final sample of 543 native ads on the most influential online media in the Croatian digital space, based on visitor criteria. The research on a sample of 543 native advertisements was conducted using content analysis methodology. Findings and implications – The findings reveal that nearly 80% of headlines contain at least one clickbait characteristic, with the style of uncertainty being the most frequently employed and effective. Half of the ads did not include any statements or sources, with the most common sources being individuals from the organization or company. The effectiveness of different source types varies across industries, with multiple sources proving most effective in sectors like non-alcoholic beverages and construction, while direct user testimonials are more impactful in technology and finance. Limitations – Due to the focus on native advertisements published in Croatian media space, results may not fully reflect the global native advertising landscape. The selected sample was based on the most-read portals according to visitor numbers, which may not represent niche platforms or smaller but influential digital spaces. Lastly, the time frame for data collection might not capture trends or changes in native advertising strategies over time, limiting the ability to generalize the findings beyond the observed period. Originality – The research underscores the significant role of clickbait headlines, visual content, and source credibility in the success of native advertising as a content marketing strategy.
 
 keywords: 
   - native advertising
@@ -132,6 +132,8 @@ Of the total 543 analysed native advertisements published over a six-month perio
 
 <details>
 <summary>Some descriptive statistics</summary>
+
+
 ```{r warning=FALSE, message=FALSE,error=FALSE, echo=FALSE, results='hide'}
 
 industry_list <- data.frame(
@@ -387,10 +389,6 @@ chisq.test(dta$INDUSTRIJA, dta$CLICKBAIT)
 ```
 
 
-
-
-
-
 </details>
 <br>
 
@@ -436,9 +434,6 @@ result %>%
                 full_width = F, position = "left")
 
 ```
-
-
-
 
 
 ```{r analysis, echo=F, eval=FALSE, message=F , warning= FALSE, results='hide'}
@@ -545,7 +540,6 @@ result %>%
 
 The advertiser's logo, or elements of the advertiser's visual identity, were included in the visual content of the analysed native ads in 34.44% of cases, while in 356 out of 543 analysed articles, this was not the case, meaning they did not contain a visual link to the advertiser.
 
-Table 3. Representation of different types of sources in the statements and reach (n=543)
 
 ```{r komm, echo=F, eval=T, message=F , warning= FALSE}
 # Create the 'izvori' DataFrame
@@ -597,6 +591,78 @@ result %>%
 In the analysis of Table 3, various types of sources were examined in relation to their impact on the reach of native ads. The findings reveal distinct differences in the effectiveness of advertising strategies based on the source type. Native ads featuring a statement from brand ambassador have an average reach of 10,057.192, similar in effectiveness to ads without a source. The median reach is 9,719, indicating consistent performance just below the mean. The minimum reach is 1,558, reflecting a decent baseline level of engagement. The maximum reach is 31,308 and the total reach is 261,487, which, while lower, still represents a significant impact given the smaller number of ads in this category.
 
 As final of the categories, native ads featuring a statement given by influencer or celebrity achieve one of the highest average reaches at 14,645.789, indicating strong effectiveness compared to other types of sources. The median reach is 14,797, suggesting very consistent and high engagement. The minimum reach is 9,975, the highest minimum reach across all categories, showing that these ads generally perform well. The maximum reach is 21,300, indicating strong potential for high engagement, though not as high as ads using multiple sources. The total reach is 278,270, which is impressive given the relatively small number of ads, highlighting the high effectiveness of this strategy.
+
+
+
+```{r komm1, echo=F, eval=T, message=F , warning= FALSE}
+# Create the 'industry_list' DataFrame
+industry_list <- data.frame(
+  id = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
+  category = c(
+    "Financial Industry",
+    "Construction Industry",
+    "Fashion and Beauty",
+    "Political Institutions",
+    "Sports Industry",
+    "Healthcare Industry",
+    "Education and Science",
+    "Technology",
+    "Automotive Industry",
+    "ICT Industry",
+    "Culture and Arts",
+    "Tourism, Leisure, Travel, Hospitality",
+    "Energy Industry",
+    "Food Industry",
+    "Non-Alcoholic Beverages",
+    "Alcoholic Beverages",
+    "Real Estate Industry",
+    "Retail",
+    "Gambling",
+    "Media, Marketing and Digital Agencies",
+    "Consumer Staples",
+    "Shopping Centers",
+    "Music Industry",
+    "Film Industry",
+    "Shipbuilding",
+    "Delivery Services",
+    "Utilities"
+  )
+)
+
+# Group by INDUSTRIJA and summarize REACH statistics
+summary_stats_industry <- dta %>%
+  group_by(INDUSTRIJA) %>%
+  summarise(
+    count = n(),
+    mean_reach = mean(REACH, na.rm = TRUE),
+    median_reach = median(REACH, na.rm = TRUE),
+    min_reach = min(REACH, na.rm = TRUE),
+    max_reach = max(REACH, na.rm = TRUE),
+    total_reach = sum(REACH, na.rm = TRUE),
+    std_reach = sd(REACH, na.rm = TRUE)
+  )
+
+# Connect with industry names from 'industry_list'
+result_industry <- summary_stats_industry %>%
+  left_join(industry_list, by = c("INDUSTRIJA" = "id"))
+
+# Display the result for INDUSTRIJA
+result_industry %>%
+  select(category, count, mean_reach, median_reach, min_reach, max_reach, total_reach, std_reach) %>%
+  kable(format = "html", 
+        col.names = c("Industry", "Count", "Mean Reach", "Median Reach", 
+                      "Min Reach", "Max Reach", "Total Reach", "Std. Deviation"),
+        caption = "Table 4: Representation of different industries and reach (n=543)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = F, position = "left")
+
+```
+
+
+
+
+
+
 
 
 ```{r  echo=F, eval=T, message=F , warning= FALSE, results='hide'}
