@@ -33,7 +33,8 @@ footnote:
   - code: 2
     text: "Co-author of the study."
 abstract: |
-  This research focuses on analyzing the content elements of native advertisements on the most popular Croatian online portals, with the aim of identifying key characteristics of headlines and content, as well as their correlation with audience reach. The study was conducted on a sample of 543 native ads published on six leading Croatian online portals from December 2021 to May 2022. The content analysis method was used, focusing on two general categories: headline characteristics and content characteristics. The analysis found that nearly 80% of the headlines had at least one clickbait characteristic, with the most commonly used styles including uncertainty (44.38%), use of numbers (9.39%), and emphasis on emotions (5.89%). The headlines were predominantly declarative sentences, with one-fifth being interrogative sentences, while the connection between the ad headline and the advertiser's brand name was very rarely present. In terms of content, visual elements were present in all ads, with photographs being the dominant element, and visual identity elements of the advertiser, such as logos, were included in 34.44% of the ads. Regarding sources in native ads, 47.33% of the ads did not use statements, while the most common sources were individuals from the organization (19.71%). Statements from direct users of the products or services were present in 6.81% of the cases, while statements from brand ambassadors and influencers were present in smaller percentages (4.79% and 3.5%, respectively). These findings highlight the dominance of clickbait headlines and the importance of visual identity in native advertising, while direct brand association and the use of various sources, including direct users, appear less frequently. A comparison of different types of headlines and sources with ad reach indicates specific practices in native advertising across different industries.
+  Svrha – Cilj ovog istraživanja je utvrditi karakteristike sadržaja nativnih oglasa (kao jedne od strategija sadržajnog marketinga) na najčitanijim hrvatskim internetskim portalima. Konkretno, istraživanje ima za cilj identificirati ključne karakteristike naslova i sadržaja te njihov odnos s dosegom publike. Metodološki pristup – Strojna predanaliza koja je obuhvatila sve objave na hrvatskim internetskim portalima tijekom promatranog razdoblja rezultirala je definiranjem konačnog uzorka od 543 nativna oglasa na najutjecajnijim internetskim portalima u hrvatskom digitalnom prostoru, temeljenim na kriterijima posjećenosti. Istraživanje na uzorku od 543 nativna oglasa provedeno je metodologijom analize sadržaja. Rezultati i implikacije – Rezultati pokazuju da gotovo 80% naslova sadrži barem jedno obilježje clickbaita, pri čemu je stil neizvjesnosti najčešće korišten i najučinkovitiji. Polovina oglasa nije uključivala nikakve izjave ili izvore, a najčešći izvori su pojedinci iz organizacije ili tvrtke. Učinkovitost različitih vrsta izvora varira ovisno o industriji, pri čemu se višestruki izvori pokazuju najučinkovitijima u sektorima poput bezalkoholnih pića i građevinarstva, dok su izravna svjedočanstva korisnika učinkovitija u tehnologiji i financijama. Ograničenja – Doprinos – Istraživanje naglašava značajnu ulogu clickbait naslova, vizualnog sadržaja i vjerodostojnosti izvora u uspjehu nativnog oglašavanja kao strategije sadržajnog marketinga.
+
 keywords: 
   - native advertising
   - content analysis
@@ -136,33 +137,33 @@ Of the total 543 analysed native advertisements published over a six-month perio
 industry_list <- data.frame(
   id = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28),
   category = c(
-    "Financijska industrija",
-    "Građevinska industrija",
-    "Moda i ljepota",
-    "Politička institucija",
-    "Sportska industrija",
-    "Zdravstvena industrija",
-    "Obrazovanje i znanost",
-    "Tehnologija",
-    "Auto-moto industrija",
-    "ICT industrija",
-    "Kultura i umjetnost",
-    "Turizam, odmor, putovanja, ugostiteljstvo",
-    "Energetska industrija",
-    "Prehrambena industrija",
-    "Industrija bezalkoholnih pića",
-    "Alkoholna pića",
-    "Industrija nekretnina",
-    "Maloprodaja",
-    "Igre na sreću",
-    "Medijske kuće i marketinške, digitalne agencije",
-    "Namještaj, saloni namještaja, kućanske potrepštine, kućanski uređaji, sredstva za čišćenje",
-    "Trgovački / shopping centri",
-    "Glazbena industrija",
-    "Filmska industrija",
-    "Brodogradnja",
-    "Pošta / distribucija pošiljki",
-    "Komunalne usluge"
+    "Financial Industry",
+    "Construction Industry",
+    "Fashion and Beauty",
+    "Political Institutions",
+    "Sports Industry",
+    "Healthcare Industry",
+    "Education and Science",
+    "Technology",
+    "Automotive Industry",
+    "ICT Industry",
+    "Culture and Arts",
+    "Tourism, Leisure, Travel, Hospitality",
+    "Energy Industry",
+    "Food Industry",
+    "Non-Alcoholic Beverages",
+    "Alcoholic Beverages",
+    "Real Estate Industry",
+    "Retail",
+    "Gambling",
+    "Media, Marketing and Digital Agencies",
+    "Consumer Staples",
+    "Shopping Centers",
+    "Music Industry",
+    "Film Industry",
+    "Shipbuilding",
+    "Delivery Services",
+    "Utilities"
   )
 )
 
@@ -226,7 +227,7 @@ IND_final <- IND_joined %>%
 
 IND_kable <- IND_final %>%
   kable(format = "html", 
-        col.names = c("Industrija", "Broj objava", "%"),
+        col.names = c("Industry", "Broj objava", "%"),
         caption = "Pregled po industrijama") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F)
 
@@ -246,7 +247,6 @@ ggplot(dta, aes(x = INDUSTRIJA)) +
   theme_minimal()
 ```
 
-
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 ggplot(dta, aes(x = CLICKBAIT)) +
   geom_histogram(binwidth = 1, fill = "black") +  # Reduced binwidth for thicker bars
@@ -254,7 +254,6 @@ ggplot(dta, aes(x = CLICKBAIT)) +
   scale_x_continuous(breaks = pretty(dta$REACH, n = 5)) +  # Set exactly 5 breaks on x-axis
   theme_minimal()
 ```
-
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 ggplot(dta, aes(x = OPREMA)) +
@@ -273,9 +272,6 @@ ggplot(dta, aes(x = `IZVORI...IZJAVE`)) +
   scale_x_continuous(breaks = pretty(dta$REACH, n = 5)) +  # Set exactly 5 breaks on x-axis
   theme_minimal()
 ```
-
-
-
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, results='hide'}
 # Portals by reach
@@ -305,11 +301,7 @@ ggplot(filtered_dta, aes(x = REACH)) +
 ```
 
 
-
-
-
 ```{r analysis2, echo=F, eval=FALSE, message=F , warning= FALSE, results='hide'}
-
 
 # make a nice historam of the reach in ggplot
 
@@ -347,7 +339,6 @@ ggplot(filtered_dta, aes(x = REACH)) +
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
-
 # non filtered
 shapiro.test(dta$REACH)
 
@@ -359,25 +350,27 @@ shapiro.test(filtered_dta$REACH)
 
 ## Kruskal-Wallis test CLICKBAIT vs REACH
 
-
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 library(coin)
 kruskal.test(REACH ~ CLICKBAIT, data = dta)
-
-
-
-
 ```
-## Kruskal-Wallis test CLICKBAIT vs OPREMA
+
+## Kruskal-Wallis test OPREMA vs REACH
 
 ```{r}
 kruskal.test(REACH ~ OPREMA, data = dta)
-## Kruskal-Wallis test CLICKBAIT vs REACH
 ```
-## Kruskal-Wallis test CLICKBAIT vs IZJAVA
+
+## Kruskal-Wallis test IZJAVA vs REACH
 
 ```{r}
 kruskal.test(REACH ~ IZVORI...IZJAVE , data = dta)
+```
+
+## Kruskal-Wallis test INDUSTRIJA vs REACH
+
+```{r}
+kruskal.test(REACH ~ INDUSTRIJA , data = dta)
 ```
 
 ## Chi-sq INDUSTRIJA vs IZVOR
@@ -391,8 +384,11 @@ chisq.test(dta$INDUSTRIJA, dta$IZVORI...IZJAVE)
 ```{r}
 chisq.test(dta$INDUSTRIJA, dta$CLICKBAIT)
 
-
 ```
+
+
+
+
 
 
 </details>
@@ -421,7 +417,8 @@ summary_stats <- dta %>%
     median_reach = median(REACH, na.rm = TRUE),
     min_reach = min(REACH, na.rm = TRUE),
     max_reach = max(REACH, na.rm = TRUE),
-    total_reach = sum(REACH, na.rm = TRUE)
+    total_reach = sum(REACH, na.rm = TRUE),
+    std_reach = sd(REACH, na.rm = TRUE)
   )
 
 # Connect with clickbait names
@@ -430,10 +427,10 @@ result <- summary_stats %>%
 
 # Display the result
 result %>%
-  select(text, count, mean_reach, median_reach, min_reach, max_reach, total_reach) %>%
+  select(text, count, mean_reach, median_reach, min_reach, max_reach, total_reach, std_reach) %>%
   kable(format = "html", 
         col.names = c("Clickbait Type", "Count", "Mean Reach", "Median Reach", 
-                      "Min Reach", "Max Reach", "Total Reach"),
+                      "Min Reach", "Max Reach", "Total Reach", "Std. Deviation"),
         caption = "Table 1: Prevalence and reach of clickbait headline characteristics in the analysed native ads (n=543)") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
                 full_width = F, position = "left")
@@ -497,26 +494,9 @@ kruskal.test(REACH ~ CLICKBAIT, data = dta)
 ```
 
 
-In the further analysis of data displayed in Table 1, various clickbait headline techniques were examined to determine their effectiveness in driving audience engagement. The data provide insights into how different strategies influence the reach of advertisements, emphasizing the role of headlines as a primary trigger for audience interaction.
+In the further analysis of data displayed in Table 1, various clickbait headline techniques were examined to determine their effectiveness in driving audience engagement. The data provide insights into how different strategies influence the reach of advertisements, emphasizing the role of headlines as a primary trigger for audience interaction. This comprehensive analysis provides a clear view of the effectiveness of different clickbait headline techniques in engaging audiences. Techniques such as uncertainty and multiple combinations of clickbait elements stand out as particularly effective, while approaches like reverse narrative style and emphasis on emotions are less impactful in terms of reach.
 
-The use of uncertainty as a clickbait technique in native adverts yields an average reach of 11,202.718, indicating a generally high level of engagement compared to other analysed categories. The median reach for this category is 10,051, suggesting that at least half of these ads successfully engage over 10,000 people. The minimum reach recorded is 963, highlighting that even the least successful ads using uncertainty headlines still manage to attract a considerable audience. The maximum reach is an impressive 142,818, demonstrating that some ads in this category have much higher reach compared to other types of clickbait headlines. The total reach across all adverts employing uncertainty is 2,699,855, making it the category with the most substantial overall impact.
-
-For ads with non-clickbait headlines, the mean reach is 8,990.412, which is lower compared to most clickbait categories. The median reach stands at 8,400, indicating consistent but moderate engagement. The minimum reach in this category is 963, like the uncertainty category, reflecting a baseline level of engagement. The maximum reach is 32,270, which is significantly lower than the top clickbait categories, suggesting that non-clickbait headlines are less likely to go viral. The total reach for this category is 1,024,907, indicating a more modest overall impact compared to clickbait strategies.
-
-Native ads using multiple combinations of clickbait techniques achieve the highest mean reach at 12,504.333, demonstrating strong effectiveness. The median reach is 10,891, showing consistently high engagement across this category. The minimum reach is 963, consistent with other categories, ensuring a same baseline. The maximum reach is 80,240, indicating a significant potential for very high engagement when multiple techniques are combined. The total reach for this category is 937,825, which is notable given the smaller number of ads utilizing this approach.
-
-The technique of incorporating numbers in native article headlines results in a mean reach of 10,610.373, indicating that this strategy is quite effective. The median reach is 10,418, suggesting consistent performance. The minimum reach is 2,129, reflecting a higher baseline reach compared to some other categories. The maximum reach is 18,790, indicating moderate potential for high engagement. The total reach for this category is 541,129, indicating a substantial, though not overwhelming, overall impact.
-
-Ads that emphasize emotions have the lowest mean reach among the categories at 7,367.219, indicating lesser effectiveness. The median reach is 6,125, showing that these ads generally reach a smaller audience. The minimum reach is 1,531, which is slightly higher than the minimum reach in some other categories, but still relatively low. The maximum reach is 19,962, suggesting limited potential for virality. The total reach for this category is 235,751, the lowest total reach among all categories, reflecting a more limited overall impact.
-
-The use of vague pronouns in headlines is one of the more effective techniques, with a mean reach of 11,954.889. The median reach is 10,701, indicating consistently strong engagement. The minimum reach is 5,688, showing a solid baseline performance. The maximum reach is 24,296, indicating some potential for high engagement, though not as much as seen in the uncertainty or multiple combinations categories. The total reach for this category is 322,782, which is relatively strong considering the fewer ads in this category.
-
-Finally, as displayed in Table 1, native adverts employing a reverse narrative style have the lowest mean reach at 6,861.667, indicating limited effectiveness. The median reach is 5,688, showing that this technique generally attracts a smaller audience. Interestingly, the minimum reach is also 5,688, matching the median, which suggests very consistent performance, albeit at a lower level. The maximum reach is 9,209, the lowest maximum reach across all categories, reinforcing the limited appeal of this style. The total reach is just 20,585, the lowest total reach, reflecting minimal overall impact.
-
-This comprehensive analysis provides a clear view of the effectiveness of different clickbait headline techniques in engaging audiences. Techniques such as uncertainty and multiple combinations of clickbait elements stand out as particularly effective, while approaches like reverse narrative style and emphasis on emotions are less impactful in terms of reach.
-
-In most of the analysed native ads (94.48%), the advertiser's brand name was not mentioned in the headline, while in 5.52% of cases, or in thirty out of the 543 articles, the brand name was included in the headline. Most headlines, 71.09%, were declarative sentences, while one-fifth of the headlines (20.26%) were interrogative, and 8.95% were exclamatory sentences. In terms of content characteristics of the observed native ads, it is noteworthy that all analysed ads featured visual content, with photographs being the most prominent, either alone or in combination with other types of visual content. As shown in Table 2, 73.67% of the ads were equipped exclusively with photographic content, while in 11.97% of cases, both photographs and graphics were included. In 11.05% of the ads, photographs were accompanied by video content, and in 2.39% of cases, the native ads contained a combination of photo, video, and graphics.
-
+In most of the analysed native ads (94.48%), the advertiser's brand name was not mentioned in the headline, while in 5.52% of cases, or in thirty out of the 543 articles, the brand name was included in the headline. This is, of course, in line with the habitus of native advertising, which is subtle, unobtrusive, and does not immediately reveal that it is, in fact, advertising. Most headlines, 71.09%, were declarative sentences, while one-fifth of the headlines (20.26%) were interrogative, and 8.95% were exclamatory sentences. In terms of content characteristics of the observed native ads, it is noteworthy that all analysed ads featured visual content, with photographs being the most prominent, either alone or in combination with other types of visual content. 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
@@ -535,8 +515,6 @@ oprema <- data.frame(
   )
 )
 
-
-
 # Grouping, summarizing, and calculating percentages
 result <- dta %>%
   group_by(OPREMA) %>%
@@ -546,17 +524,18 @@ result <- dta %>%
     median_reach = median(REACH, na.rm = TRUE),
     min_reach = min(REACH, na.rm = TRUE),
     max_reach = max(REACH, na.rm = TRUE),
-    total_reach = sum(REACH, na.rm = TRUE)
+    total_reach = sum(REACH, na.rm = TRUE),
+    std_reach = sd(REACH, na.rm = TRUE)
   ) %>%
   left_join(oprema, by = c("OPREMA" = "number"))
 
 # Create a beautiful table
 result %>%
-  select(text, count, mean_reach, median_reach, min_reach, max_reach, total_reach) %>%
+  select(text, count, mean_reach, median_reach, min_reach, max_reach, total_reach, std_reach) %>%
   kable(format = "html", 
         col.names = c("Oprema", "Count", "Mean Reach", "Median Reach", 
-                      "Min Reach", "Max Reach", "Total Reach"),
-        caption = "Table 3. Representation of different types of sources in the statements and reach (n=543)") %>%
+                      "Min Reach", "Max Reach", "Total Reach", "Std. Deviation"),
+        caption = "Table 2. Type of visual equipment (n=543)") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
                 full_width = F, position = "left")
 
@@ -564,12 +543,7 @@ result %>%
 ```
 
 
-
-
-
 The advertiser's logo, or elements of the advertiser's visual identity, were included in the visual content of the analysed native ads in 34.44% of cases, while in 356 out of 543 analysed articles, this was not the case, meaning they did not contain a visual link to the advertiser.
-
-Regarding the content characteristics of native ads in this study, the types of sources or statements in the articles were also observed, as shown in Table 3. The ratio of ads using sources to those that do not is approximately similar, with the most common sources in the ads being individuals from the organization, i.e., the advertiser (19.71%). The second most common sources, with a prevalence of 10.31%, were those not directly connected to the product or service, while multiple sources were present in 7.55% of the ads, and in 6.81% of the ads, there was testimony or a statement from a person presented as a direct user of the product or service. Celebrities were also used as sources in native ads, with brand ambassadors’ statements used in 4.79% of cases, and influencers or celebrities were present in 3.5% of the analysed ads.
 
 Table 3. Representation of different types of sources in the statements and reach (n=543)
 
@@ -598,7 +572,8 @@ summary_stats <- dta %>%
     median_reach = median(REACH, na.rm = TRUE),
     min_reach = min(REACH, na.rm = TRUE),
     max_reach = max(REACH, na.rm = TRUE),
-    total_reach = sum(REACH, na.rm = TRUE)
+    total_reach = sum(REACH, na.rm = TRUE),
+    std_reach = sd(REACH, na.rm = TRUE)
   )
 
 # Connect with clickbait names
@@ -607,10 +582,10 @@ result <- summary_stats %>%
 
 # Display the result
 result %>%
-  select(text, count, mean_reach, median_reach, min_reach, max_reach, total_reach) %>%
+  select(text, count, mean_reach, median_reach, min_reach, max_reach, total_reach,std_reach) %>%
   kable(format = "html", 
         col.names = c("Source Type", "Count", "Mean Reach", "Median Reach", 
-                      "Min Reach", "Max Reach", "Total Reach"),
+                      "Min Reach", "Max Reach", "Total Reach", "Std. Deviation"),
         caption = "Table 3. Representation of different types of sources in the statements and reach (n=543)") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
                 full_width = F, position = "left")
@@ -739,7 +714,7 @@ industry_clickbait <- industry_clickbait %>%
 # Optional Step: Create a Heatmap for Visualization
 ggplot(industry_clickbait, aes(x = category, y = text, fill = Percent)) +
   geom_tile() +
-  scale_fill_gradient(low = "white", high = "blue") +
+  scale_fill_gradient(low = "white", high = "black") +
   labs(title = "Graph 1: Distribution of different clickbait types across various industries",
        x = "Industry",
        y = "Clickbait Type",
@@ -754,6 +729,7 @@ In general, the data reveal that most industries adopt a mix of clickbait strate
 Conversely, sectors like shipbuilding prefer straightforward, non-clickbait headlines, likely reflecting the technical and factual nature of their content, while this technique is also widely used in fashion industry, as the data displayed in Histogram 1 is showing. When it comes to the specific types of clickbait, the use of multiple combinations of techniques is particularly prominent in the movie industry along with fashion, and arts & culture sector, indicating this strategic approach to maximizing engagement. The reverse narrative style, though generally less commonly used, finds notable application in the sports industry, suggesting that reversing the expected narrative could be effective in this sector. This technique is also used in minimal amounts in retail and ICT industries, while the other industries tend not to apply this strategy in their native advertising.
 
 Vague pronouns is also lesser used technique, and it is more favoured approach in media, marketing and digital agencies, along with postal services. In contrast, emotional emphasis is more frequently used in the utility services sector, science and education and alcoholic beverages industry, where emotionally charged messaging can influence consumer behaviour. The use of numbers in headlines is moderately preferred in the retail industries, along with furniture and home appliances industry, and shopping centres where presenting clear, quantifiable information can appeal to a detail-oriented audience.
+
 
 
 ```{r fig.height=12, fig.width=10, echo=F, eval=T, message=F , warning= FALSE}
@@ -778,7 +754,7 @@ industry_sources <- industry_sources %>%
 # Optional Step: Create a Heatmap for Visualization
 ggplot(industry_sources, aes(x = category, y = text, fill = Percent)) +
   geom_tile() +
-  scale_fill_gradient(low = "white", high = "blue") +
+  scale_fill_gradient(low = "white", high = "black") +
   labs(title = "Distribution of Source Types Across Industries",
        x = "Industry",
        y = "Source Type",
@@ -800,15 +776,17 @@ Industries such as alcoholic beverages and arts & culture occasionally employ so
 The “Influencer/Celebrity” category is notably prominent in sports industry, and is also used in media, marketing and digital agencies, along with furniture and home appliances industry, implying that these sectors rely on aspirational appeal and the social influence of well-known figures to drive engagement. Similarly to previous category, the use of brand ambassadors shows strength in sports industry, where a consistent and trustworthy spokesperson can help bridge the gap between complex products and the consumer, but this technique is also used in arts & culture and science & education sectors.
 
 
+
 # Conclusion
 
-The theoretical basis of this paper was the thesis that native advertising is “an extension of content marketing and provides marketers with a platform to place content in front of a wider audience they wouldn't ordinarily reach” [@crook2022]. Although there are authors who highlight certain criteria by which content marketing differs from native advertising, the ultimate goal is common: to drive profitable customer action. Based on the findings of this research, several conclusions can be drawn. The analysis of 543 native ads published on six Croatian online portals reveals a predominant use of clickbait headlines, with nearly 80% of headlines containing at least one clickbait characteristic. The most frequently employed technique is the style of uncertainty, which significantly contributes to audience engagement, as evidenced by its high average and total reach. This indicates that uncertainty-driven headlines are particularly effective in attracting readers. This is evidence that advertisers, through their content, aim to promote a “culture of fear”, a concept typically explored by sociologists [@maskalan2014; @furedi1997] in the context of political actions, but which is also applicable in the advertising industry. This is particularly due to the fact that fear/insecurity appeals can encourage people to change their attitudes and purchasing preferences [@foxall2007; @kesic2003]. Martin Lindstrom [@lindstrom2008] anticipated that contemporary advertising would increasingly be based on somatic markers triggered by fear and a sense of insecurity. In other words, advertisers will try to convince us that by not purchasing their product, we become insecure, dissatisfied, and unfree, which is evident in this analysis as well.
+The theoretical basis of this paper was the thesis that native advertising is “an extension of content marketing and provides marketers with a platform to place content in front of a wider audience they wouldn't ordinarily reach” (Crook, 2022). Although there are authors who highlight certain criteria by which content marketing differs from native advertising, the ultimate goal is common: to drive profitable customer action. Based on the findings of this research, several conclusions can be drawn. The analysis of 543 native ads published on six Croatian online portals reveals a predominant use of clickbait headlines, with nearly 80% of headlines containing at least one clickbait characteristic. The most frequently employed technique is the style of uncertainty, which significantly contributes to audience engagement, as evidenced by its high average and total reach. This indicates that uncertainty-driven headlines are particularly effective in attracting readers. This is evidence that advertisers, through their content, aim to promote a “culture of fear”, a concept typically explored by sociologists (Maskalan, 2014; Furedi, 1997) in the context of political actions, but which is also applicable in the advertising industry. This is particularly due to the fact that fear/insecurity appeals can encourage people to change their attitudes and purchasing preferences (Foxall et al., 2007; Kesić, 2003). Martin Lindstrom (2008) anticipated that contemporary advertising would increasingly be based on somatic markers triggered by fear and a sense of insecurity. In other words, advertisers will try to convince us that by not purchasing their product, we become insecure, dissatisfied, and unfree, which is evident in this analysis as well.
 
-Interestingly, a smaller portion of the headlines (5.52%) mentioned the brand, suggesting that most ads are neutral in terms of direct brand promotion. This is, of course, in line with the habitus of native advertising, which is subtle, unobtrusive, and does not immediately reveal that it is, in fact, advertising. All analysed ads included visual elements, with photographs being the most common, either alone or combined with other types of visual content. The presence of the advertiser's logo or elements of their visual identity in 34.44% of the ads further underscores the importance of visual branding in native advertising.
+Interestingly, a smaller portion of the headlines (5.52%) mentioned the brand, suggesting that most ads are neutral in terms of direct brand promotion. All analysed ads included visual elements, with photographs being the most common, either alone or combined with other types of visual content. The presence of the advertiser's logo or elements of their visual identity in 34.44% of the ads further underscores the importance of visual branding in native advertising.
 
 Regarding the content characteristics of native ads, the analysis also considered the types of sources or statements used. The data show that almost half of the ads did not include any statements or sources, which is particularly common in certain industries such as retail, utility services, and shopping centres. When sources were used, the most frequent were individuals from the organization or company, indicating the value placed on insider credibility. Multiple sources and unrelated sources were less commonly used, but they demonstrated strong potential for high engagement, particularly when diverse perspectives were presented. The effectiveness of different source types varies across industries. For instance, the use of multiple sources is most effective in the non-alcoholic beverages and construction industries, where diverse references can enhance credibility. In contrast, direct user testimonials are more effective in sectors like technology and finance, where personal experience adds value to the advertising message. Clickbait techniques such as the use of numbers and vague pronouns also show varying levels of effectiveness depending on the industry. The retail and furniture industries, for example, favour the use of numbers to appeal to detail-oriented audiences. In contrast, emotional emphasis is more commonly used in sectors like utility services and education, where emotionally charged content can influence consumer behaviour.
 
 Overall, this research highlights the strategic use of clickbait headlines and source types in native advertising as a content marketing strategy. The findings suggest that while certain techniques like uncertainty and multiple sources are particularly effective, the choice of strategy should be carefully tailored to the industry and target audience to maximize engagement. The data underscore the importance of understanding the specific characteristics and preferences of different sectors when designing native ads, as well as the significant role of visual content and source credibility in achieving advertising success.
+
 
   
 
