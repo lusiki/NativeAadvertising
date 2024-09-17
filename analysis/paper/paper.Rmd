@@ -1,56 +1,80 @@
 ---
-title: Native advertising as a content marketing strategy
+title: "Native advertising as a content marketing strategy"
 author:
-  - name: Davor Trbusic
-    email: davor.trbusic@unicath.hr
-    affiliation: Croatian Catholic University
-    correspondingauthor: true
-    footnote: 1
-  - name: Drazen Males
-    email: dmales@fhs.hr
-    affiliation: Faculty of Croatian Studies
-  - name: Luka Sikic
-    email: luka.sikic@unicath.hr
-    affiliation: Croatian Catholic University
-    footnote: 2
-address:
-  - code: Croatian Catholic University
-    organization: Croatian Catholic University
-    addressline: Ilica 242
-    city: Zagreb
-    state: 
-    postcode: 10000
-    country: Croatia
-  - code: Faculty of Croatian Studies
-    organization: Faculty of Croatian Studies
-    addressline: Borongajska cesta 83d
-    postcode: 10000
-    city: Zagreb
-    country: Croatia
-footnote:
-  - code: 1
-    text: "This is the corresponding author."
-  - code: 2
-    text: "Co-author of the study."
-abstract: |
-  Purpose – The objective of this study is to determine the content characteristics of native advertisements (as one of the content marketing strategies) on the most-read Croatian internet portals. Specifically, the study aims to identify key characteristics of headlines and content, and their relationship with audience reach. Design/Methodology/Approach – A machine-based pre-analysis that included all posts on Croatian internet portals during the observed period resulted in defining a final sample of 543 native ads on the most influential online media in the Croatian digital space, based on visitor criteria. The research on a sample of 543 native advertisements was conducted using content analysis methodology. Findings and implications – The findings reveal that nearly 80% of headlines contain at least one clickbait characteristic, with the style of uncertainty being the most frequently employed and effective. Half of the ads did not include any statements or sources, with the most common sources being individuals from the organization or company. The effectiveness of different source types varies across industries, with multiple sources proving most effective in sectors like non-alcoholic beverages and construction, while direct user testimonials are more impactful in technology and finance. Limitations – Due to the focus on native advertisements published in Croatian media space, results may not fully reflect the global native advertising landscape. The selected sample was based on the most-read portals according to visitor numbers, which may not represent niche platforms or smaller but influential digital spaces. Lastly, the time frame for data collection might not capture trends or changes in native advertising strategies over time, limiting the ability to generalize the findings beyond the observed period. Originality – The research underscores the significant role of clickbait headlines, visual content, and source credibility in the success of native advertising as a content marketing strategy.
-
-keywords: 
-  - native advertising
-  - content analysis
-  - headline characteristics
-journal: "An awesome journal"
+- name: Davor Trbusic
+  email: davor.trbusic@unicath.hr
+  affiliation: Croatian Catholic University
+  correspondingauthor: yes
+  footnote: 1
+- name: Drazen Males
+  email: dmales@fhs.hr
+  affiliation: Faculty of Croatian Studies
+- name: Luka Sikic
+  email: luka.sikic@unicath.hr
+  affiliation: Croatian Catholic University
+  footnote: 2
 date: "`r Sys.Date()`"
-linenumbers: false
-numbersections: true
-bibliography: refs.bib
-output: 
+output:
+  word_document:
+    toc: yes
   html_document:
-    toc: true
-    toc_float: true
-    number_sections: true
+    toc: yes
+    toc_float: yes
+    number_sections: yes
     df_print: kable
-
+abstract: "Purpose – The objective of this study is to determine the content characteristics
+  of native advertisements (as one of the content marketing strategies) on the most-read
+  Croatian internet portals. Specifically, the study aims to identify key characteristics
+  of headlines and content, and their relationship with audience reach. Design/Methodology/Approach
+  – A machine-based pre-analysis that included all posts on Croatian internet portals
+  during the observed period resulted in defining a final sample of 543 native ads
+  on the most influential online media in the Croatian digital space, based on visitor
+  criteria. The research on a sample of 543 native advertisements was conducted using
+  content analysis methodology. Findings and implications – The findings reveal that
+  nearly 80% of headlines contain at least one clickbait characteristic, with the
+  style of uncertainty being the most frequently employed and effective. Half of the
+  ads did not include any statements or sources, with the most common sources being
+  individuals from the organization or company. The effectiveness of different source
+  types varies across industries, with multiple sources proving most effective in
+  sectors like non-alcoholic beverages and construction, while direct user testimonials
+  are more impactful in technology and finance. Limitations – Due to the focus on
+  native advertisements published in Croatian media space, results may not fully reflect
+  the global native advertising landscape. The selected sample was based on the most-read
+  portals according to visitor numbers, which may not represent niche platforms or
+  smaller but influential digital spaces. Lastly, the time frame for data collection
+  might not capture trends or changes in native advertising strategies over time,
+  limiting the ability to generalize the findings beyond the observed period. Originality
+  – The research underscores the significant role of clickbait headlines, visual content,
+  and source credibility in the success of native advertising as a content marketing
+  strategy.\n"
+keywords:
+- native advertising
+- content analysis
+- headline characteristics
+journal: An awesome journal
+address:
+- code: Croatian Catholic University
+  organization: Croatian Catholic University
+  addressline: Ilica 242
+  city: Zagreb
+  state: null
+  postcode: 10000
+  country: Croatia
+- code: Faculty of Croatian Studies
+  organization: Faculty of Croatian Studies
+  addressline: Borongajska cesta 83d
+  postcode: 10000
+  city: Zagreb
+  country: Croatia
+linenumbers: no
+numbersections: yes
+always_allow_html: true
+bibliography: refs.bib
+footnote:
+- code: 1
+  text: This is the corresponding author.
+- code: 2
+  text: "Co-author of the study."
 ---
 
 # Introduction 
